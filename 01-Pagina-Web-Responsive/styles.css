@@ -1,0 +1,30 @@
+h1 {
+    color: coral;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+a {
+    text-decoration: none;
+    color: rgb(37, 37, 203);
+}
+
+.rc-section-header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rc-section-header img {
+    width: 20%;
+    height: 20%;
+    padding: 20px;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
