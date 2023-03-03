@@ -18,13 +18,26 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: black;
+    
+    /* z-index: -1; */
 }
 
-.rc-section-header img {
+div img {
     width: 20%;
     height: 20%;
     padding: 20px;
-    /* display: flex;
+    display: flex;
     align-items: center;
-    justify-content: center; */
+    justify-content: center;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
 }
