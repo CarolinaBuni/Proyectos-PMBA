@@ -19,8 +19,21 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     background-color: black;
+    font-family: 'Oswald', Courier, sans-serif;
+    letter-spacing: 0.5px;
+    width: 100%;
     
     /* z-index: -1; */
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 900;
+    color: white;
 }
 
 div img {
@@ -30,14 +43,20 @@ div img {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .banner {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 body {
     margin: 0;
+}
+
+video {
+    z-index: -1;
 }
