@@ -1,137 +1,156 @@
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-
-path {
-    stroke: white;
-    margin: 5px;
+body {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    color: black;
+    line-height: 63px;
 }
 
-.buttons {
+header a {
     display: flex;
-    margin: 0%;
-    position: absolute;
-    margin-left: 89%;
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    
-    
-}
-
-button[type="submit"] {
-    background-color: transparent;
-    color: white; /* Color de texto */
-    padding: 12px 20px; /* Espacio alrededor del texto */
-    text-align: center; /* Alinear el texto al centro */
-     /* Sin subrayado */
-    display: inline-block; /* Mostrar como elemento en línea */
-    font-size: 16px; /* Tamaño del texto */
-    margin: 4px 2px; /* Margen superior e inferior */
-    cursor: pointer; /* Cambiar el cursor al pasar por encima */
-    border: none; /* Añadir esquinas redondeadas */
-  }
-  
-
-  input[type="text"] {
-    border: none;
-    background-color: transparent;
-    font-weight: 700;
-    color: white;
-    
-    
-    
-  }
-
-
-ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    
 }
 
 a {
     text-decoration: none;
-    color: rgb(134, 224, 32);
-    cursor: pointer;
-    margin: 7px;
-}
-
-svg {
-    margin: 10px;
-    cursor: pointer;
-    width: 25px;
-    height: 35px;
-}
-
-.rc-section-header {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: black;
-    font-family: 'Oswald', Courier, sans-serif;
-    letter-spacing: 0.5px;
-    width: 100%;
-    padding: 3px;
-    
-    /* z-index: -1; */
-}
-
-span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
     font-size: 12px;
-    font-weight: 900;
-    color: white;
+    color: #575757;
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.pullandbear-logo {
-    width: 19%;
-    height: 3%;
-    padding: 15px;
-    margin: 0;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
-    
-
-    
-}      
-
-
-video {
-    width: 100%;
-    height: 100%;  
-
-    
-}
-
-.rc-nav-header {
+header {
     display: flex;
-    justify-content: center;
-}
-
-
-
-
-
-/* .banner {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
-} */
+    background-color: white;
+    border-bottom: rgb(87, 87, 87, 10%) solid 2px;
+    
+}
+
+header img {
+    width: 10%;
+    margin-right: 30%;
+    
+}
+
+header input {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.main-nav {
+    list-style-type: none;
+    /* margin: 20px; */
+    text-align: center;
+    border-bottom: rgb(87, 87, 87, 10%) solid 2px;
+    
+}
+
+.main-nav a:hover {
+    color: #d01261;
+    background-color: rgb(208, 18, 97, 0.05);
+    padding: 5px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: rgb(87, 87, 87, 10%) solid 2px;
+    
+}
+
+.social ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.social img {
+    width: 45%;
+    
+}
+
+.social img:hover {
+    transform: scale(1.1);
+}
 
 
+main p {
+    margin: 20px;
+    text-align: justify;
+}
+
+footer p {
+    margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    
+    
+}
+
+footer img {
+    width: 18px;
+    margin-right: 20px;
+    text-align: justify;
+}
+
+@media (min-width: 769px) {
+    header, .main-nav {
+        display: flex;
+        justify-content: center;
+        padding: 3px;
+        margin: 0 20px 0 20px;
+    }
+
+    .main-nav a {
+        margin: 10px;
+        font-size: 14px;
+        
+        
+    }
+}
+
+@media (min-width: 1025px) {
+    .main-nav {
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+}
+
+.green {
+    color: #73AA24;
+}
 
 
+.copyright {
+    font-weight: 700;
+    display: inline-block;
+
+}
+
+.legal-links a {
+    color: #7f8182;
+    text-transform: none;
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+}
 
 
+.end-footer {
+    display: flex;
+    margin-left: 20%;
+    /* justify-content: center; */ 
+}
 
+.legal-links a {
+    margin: 10px;
+}
