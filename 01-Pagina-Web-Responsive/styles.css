@@ -54,7 +54,7 @@ padding: 8px;
 width: 750px;
 border-radius: 60px;
 height: 60px;
-color: ;
+
 }
 
 .buscador button {
@@ -106,7 +106,7 @@ footer {
 }
 
 .social img {
-    width: 45%;
+    width: 36%;
     
 }
 
@@ -185,4 +185,69 @@ footer img {
 
 .legal-links a {
     margin: 10px;
+}
+
+
+
+section {
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    
+    
+}
+
+
+
+article {
+    background-color: aqua;
+    width: 20em;
+    margin: 20px;
+    
+}
+
+.item-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7f8182;
+    width: 20em;
+    box-sizing: content-box;
+}
+
+.item-info {
+    background-color: #73AA24;
+    height: 200px;
+    
+}
+
+.item-1-img a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-info h1 {
+    padding: 0;
+    height: 5px;
+}
+
+.item-info p {
+    padding: 0;
+    height: 5px;
+}
+
+.tittle {
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+main {
+    width: 100%;
+    background-color: paleturquoise;
+    
 }
