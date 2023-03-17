@@ -10,9 +10,7 @@ body {
     line-height: 63px;
 }
 
-header a {
-    display: flex;
-}
+
 
 a {
     text-decoration: none;
@@ -34,16 +32,49 @@ header {
     
 }
 
-header img {
-    width: 10%;
-    margin-right: 30%;
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* width: 100%; */
+    }
     
+.buscador {
+display: flex;
+align-items: center;
+margin-right: 1rem;
+
 }
 
-header input {
-    width: 30%;
-    border-radius: 10px;
+.buscador input {
+margin-right: 1rem;
+padding: 8px;
+width: 750px;
+border-radius: 60px;
+height: 60px;
+color: ;
 }
+
+.buscador button {
+    color: black;
+    padding: 8px;
+    width: 80px;
+    height: 50px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+header img {
+    width: 15%;
+    display: flex;
+    /* margin-right: 70%; */   
+}
+
+
 
 .main-nav {
     list-style-type: none;
@@ -103,7 +134,7 @@ footer img {
     text-align: justify;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 375px) {
     header, .main-nav {
         display: flex;
         justify-content: center;
@@ -148,6 +179,7 @@ footer img {
 .end-footer {
     display: flex;
     margin-left: 20%;
+    padding: 3px 0 11px 0;
     /* justify-content: center; */ 
 }
 
