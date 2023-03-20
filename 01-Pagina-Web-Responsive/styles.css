@@ -252,6 +252,7 @@ main {
     
 }
 
+
 .home-banner {
     display: flex;
     justify-content: center;
@@ -265,5 +266,9 @@ main {
 
 .column-banner {
     margin-left: 30px;
+}
+
+nav {
+    margin-bottom: 15px;
 }
 
