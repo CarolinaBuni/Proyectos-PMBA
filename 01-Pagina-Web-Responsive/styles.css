@@ -2,17 +2,18 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
 }
 
 body {
-    font-family: 'Karla', Arial, Helvetica, sans-serif;
-    color: black;
+    /* color: black; */
     line-height: 63px;
 }
 
 
 .icons-nav-bar a {
-    text-decoration: none;
     font-size: 12px;
     color: #575757;
     font-weight: 700;
@@ -70,7 +71,7 @@ width: 600px;
 border-radius: 60px;
 height: 45px;
 border-color: rgb(87, 87, 87, 10%);
-font-family: 'Karla', Arial, Helvetica, sans-serif;
+
 
 
 }
@@ -101,16 +102,12 @@ font-family: 'Karla', Arial, Helvetica, sans-serif;
     transform: translateY(-50%);
     width: 25px;
     height: 25px;
-    border-radius: 40px;
-
-    
-    
+    border-radius: 40px;   
 }
 
 
 .main-nav {
     width: 100%;
-    list-style-type: none;
     /* margin: 20px; */
     text-align: center;
     
@@ -122,22 +119,24 @@ nav {
 }
 
 .nav-bar {
-    text-decoration: none;
-    font-size: 12px;
+    font-size: 16px;
     color: #575757;
-    font-family: 'Karla', Arial, Helvetica, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: 1s;
 }
 
 
 
 .nav-bar:hover {
     color: #d01261;
+    transition: all 1s;
+    border-radius: 2px;   
+}
+
+.nav-bar a:hover {
     background-color: rgb(208, 18, 97, 0.05);
-    padding: 5px;
-    transition: 1s;
 }
 
 
@@ -153,7 +152,6 @@ footer {
 
 .social ul {
     display: flex;
-    list-style: none;
     flex-wrap: wrap;
 }
 
@@ -174,9 +172,7 @@ main p {
 footer p {
     margin-bottom: 20px;
     font-weight: 900;
-    letter-spacing: 0.2px;
-    
-    
+    letter-spacing: 0.2px;    
 }
 
 footer img {
@@ -195,7 +191,7 @@ footer img {
 
     .main-nav a {
         margin: 10px;
-        font-size: 14px;       
+        font-size: 16px;       
     }
 }
 
@@ -220,7 +216,6 @@ footer img {
 .legal-links a {
     color: #7f8182;
     text-transform: none;
-    font-family: 'Karla', Arial, Helvetica, sans-serif;
 }
 
 
@@ -239,7 +234,7 @@ footer img {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 60%;    
+    width: 100%;    
 }
 
 
@@ -268,12 +263,10 @@ article {
     /* background-color: #73AA24; */
     height: 200px;
     font-size: 15px;
-    font-weight: 400;
-    
+    font-weight: 400;    
 }
 
 .item-info a {
-    text-decoration: none;
     color: black;
     font-size: 14px;
 }
@@ -283,8 +276,7 @@ article {
 .item-info p {
     padding: 0;
     height: 5px;
-    font-size: 14px;
-    
+    font-size: 14px;   
 }
 
 .tittle {
@@ -319,8 +311,8 @@ main {
 }
 
 .home-banner img {
-width: 100%;
-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .second-home-banner {
@@ -350,7 +342,6 @@ height: 100%;
 }
 
 .icons-nav-bar ul {
-    list-style: none;
     display: flex;
     justify-content: center;
 }
@@ -374,7 +365,6 @@ height: 100%;
 
 .recomendations {
     text-transform: uppercase;
-    font-family: "Karla", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 26px;
@@ -390,7 +380,6 @@ height: 100%;
 .bar {
     text-decoration: none;
     color: black;
-    font-family: 'Karla', Arial, Helvetica, sans-serif;
     font-weight: 700;
     line-height: 23px;
     font-size: 16px;
