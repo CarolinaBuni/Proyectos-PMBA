@@ -37,6 +37,7 @@ header {
     margin: 5px;
     display: flex;
     align-items: center;
+    position: sticky;
 }
 
 
