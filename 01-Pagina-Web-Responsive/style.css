@@ -27,6 +27,8 @@ html {
     --margin: 20px;
     --gap: 20px;
     --font-weight: 700;
+    --border: 1px solid rgb(87, 87, 87, 10%);
+
 }
 
 /* HEADER */
@@ -35,6 +37,7 @@ header {
     top: 0;
     background-color:white;
     z-index: 999;
+    
 }
 
 .encabezado {
@@ -43,12 +46,13 @@ header {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    border-bottom: var(--border);
 }
 
 #buscador {
     border: 2px solid rgb(87, 87, 87, 10%);
     min-width: 320px;
-    border-radius: 20px;
+    border-radius: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,6 +118,8 @@ header {
     cursor: pointer;
 }
 
+
+
 .navbar ul {
     display: flex;
     flex-wrap: wrap;
@@ -123,13 +129,12 @@ header {
     text-transform: uppercase;
     font-weight: var(--font-weight);
     padding: 20px;
-    
 }
 
 .navbar {
     margin-top: var(--margin);
-    border-top: 1px solid rgb(87, 87, 87, 10%);
-    border-bottom: 1px solid rgb(87, 87, 87, 10%);   
+    width: 100%;
+    border-top: 1px solid rgb(87, 87, 87, 10%); 
 }
 
 
@@ -205,29 +210,40 @@ main {
         margin-bottom: 20px;
     }
 
+    .navbar > ul li {
+        display: none;
+    }
+
+    .navbar ul li:nth-child(1),
+    .navbar ul li:nth-child(2) {
+        display: block !important;;
+    }
+
+    .page-wrapper {
+        margin: auto 20px;
+        flex-wrap: wrap;
+    }
+
     .products {
         margin-right: 0;
-        
     }
 
     article.item {
-        
         display: flex;
     }
 
     .recomendados {
         margin-left: 6rem;
     } 
-}
 
-@media screen and (min-width: 1025px) {
-    .main-nav li {
+    .carrusel > ul li {
         display: none;
     }
 }
 
+
 @media (max-width: 1025px) {
-    .promociones, .navbar, .carrusel {
+    .promociones {
         display: none;
     }
 
@@ -240,6 +256,13 @@ main {
     } 
 }
 
+@media screen and (min-width: 1860px) {
+    .products {
+        width: 60%;
+    } 
+}
+
+
 @media (min-width: 1025px) {
     .ofertas-mobile {
         display: none
@@ -249,10 +272,6 @@ main {
 
 
 @media screen and (min-width: 375px) {
-    .encabezado {
-        gap: 20px;
-        
-    }
 
     .end-footer {
         align-items: flex-start;
@@ -264,7 +283,12 @@ main {
     
     .page-wrapper {
         margin: var(--margin);
-        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .carrusel > ul li {
+        display: none;
     }
 }
 
@@ -275,7 +299,7 @@ main {
     margin-top: var(--margin);
 }
 
-.foto-grande {
+.page-wrapper-unica img {
     width: 100%;
     height: 100%;
     cursor: pointer;
@@ -301,24 +325,23 @@ main {
     align-items: center;
 }
 
+.carrusel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--margin);
+}
+
 .carrusel ul {
-    padding-top: 15px;
     display: flex;
     justify-content: center;
     align-items: baseline;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 3rem;
     text-transform: uppercase;
 }
 
-.carrusel li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: flex-end;
-    text-align: center;
-    width: 15vh;
-}
+
 
 section > p > strong {
     text-transform: uppercase;
@@ -348,7 +371,7 @@ section > p > strong {
 }
 
 .item {
-    margin: 4px;
+    margin: var(--margin) 4px;
     margin-top: var(--margin);
     border: rgb(87, 87, 87, 10%) solid 2px;
     background-color: white;
@@ -381,11 +404,14 @@ section > p > strong {
 
 .tittle-favorito img {
     margin-right: var(--margin);
+    transition: 0.5s ;
 }
 
 .tittle-favorito img:hover {
     filter: invert(18%) sepia(48%) saturate(7133%) hue-rotate(325deg) brightness(83%) contrast(95%);
+    transition: 0.5s ;
 }
+
 
 .quantity {
     margin-left: var(--margin);
@@ -413,12 +439,12 @@ section > p > strong {
     text-align: center;
     height: 70px;
     padding-top: 20px; 
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .add-to-cart:hover {
     background-color: #fdf5f8;
-    transition: all 0.3s ease-out;
+    transition: all 0.5s ease-out;
 }
 
 .add-to-cart > button {
@@ -446,37 +472,13 @@ section > p > strong {
     border: 2px solid var(--highlight-color);
     background-color: var(--highlight-color);
     border-radius: 15px;
-    padding: 2px;
+    padding: 3px;
     margin: 8px;
     color: var(--background-color);
-    width: 8vh;
     text-align: center;
 }
 
-.frank img {
-    width: 70%;
-    margin-bottom: 25%;  
-}
-
-.solar img {
-    width: 60%;
-}
-
-.cabello img {
-    width: 70%;
-}
-
-.wellness img {
-    width: 70%;
-}
-
-.parafarmacia img {
-    width: 80%;
-}
-
-.regalos img {
-    width: 70%;
-}
+/*FOOTER*/
 
 footer {
     display: flex;
@@ -484,8 +486,8 @@ footer {
     gap: 2rem;
     justify-content: center;
     align-items: baseline;
-    border-bottom: 1px solid rgb(87, 87, 87, 10%);
-    margin: 20px;
+    border-bottom: var(--border);
+    margin-top: var(--margin);
 }
 
 .footer-links ul {
@@ -517,15 +519,15 @@ footer {
 }
 
 .enlaces > .about::before {
-    content: url(./assets/estrella\ \(1\).png);   
+    content: url(./assets/icono-estrella.png);   
 }
 
 .enlaces > .help::before {
-    content: url(./assets/ayuda.png);
+    content: url(./assets/icono-ayuda.png);
 }
 
 .enlaces > .chat::before {
-    content: url(./assets/comentario.png);
+    content: url(./assets/icono-comentario.png);
 }
 
 .about, .help, .chat {
@@ -590,19 +592,5 @@ footer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-left: var(--margin);
+    margin-left: var(--margin); 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
