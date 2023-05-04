@@ -492,7 +492,7 @@ footer {
 
 .footer-links ul {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     margin-top: 17px;
     width: 100%;
     
@@ -530,10 +530,15 @@ footer {
     content: url(./assets/icono-comentario.png);
 }
 
-.about, .help, .chat {
+.about, .help, .chat, .siguenos {
     display: flex;
     gap: 10px;
 }
+
+.siguenos {
+    margin-top: var(--margin);
+}
+
 
 .payments {
     display: flex;
@@ -541,7 +546,7 @@ footer {
 }
 
 .payments img {
-    width: 50%;
+    width: 200px;
 }
 
 .payments-icons {
@@ -555,11 +560,6 @@ footer {
 .logo-bizum {
     width: 30%;
     margin-left: -15px;
-}
-
-.logo-visa {
-    width: 10%;
-    height: 25%;
 }
 
 .logo-paypal {
@@ -587,6 +587,10 @@ footer {
     color: var(--secondary-color);
 }
 
+.footer-links > h5::before {
+    content: url(./assets/icono-compartir.png)
+}
+
 .end-footer {
     height: 10vh;
     display: flex;
@@ -594,3 +598,5 @@ footer {
     align-items: center;
     margin-left: var(--margin); 
 }
+
+
