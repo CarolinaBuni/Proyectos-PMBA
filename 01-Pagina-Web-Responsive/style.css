@@ -350,6 +350,16 @@ main {
     text-transform: uppercase;
 }
 
+.carrusel > ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.franck {
+    width: 5rem;
+}
+
 
 
 section > p > strong {
