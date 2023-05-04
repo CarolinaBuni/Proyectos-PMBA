@@ -119,7 +119,6 @@ header {
 }
 
 
-
 .navbar ul {
     display: flex;
     flex-wrap: wrap;
@@ -538,7 +537,6 @@ footer {
 .siguenos {
     margin-top: var(--margin);
 }
-
 
 .payments {
     display: flex;
