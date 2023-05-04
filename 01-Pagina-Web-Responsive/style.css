@@ -295,6 +295,15 @@ main {
     }
 }
 
+@media screen and (min-width: 375px) and (max-width: 470px) {
+    .icons,
+    .promociones,
+    .buscador-promociones {
+        margin-top: var(--margin);
+        
+    }
+}
+
 @media screen and (max-width: 900px) {
     .carrusel > ul li {
         display: none;
