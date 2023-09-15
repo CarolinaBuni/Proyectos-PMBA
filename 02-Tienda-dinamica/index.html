@@ -9,49 +9,42 @@
 </head>
 <body>
     <header>
+        <!-- Logo  -->
         <img class="logo" src="/assets/LOGO.avif" alt="logo">
+        <!-- Barra de navegación -->
         <nav>
-            
         </nav>
-
+        <!-- Icono de menú desplegable en patantalla móvil -->
         <img src="/assets/hamburguesa.png" alt="menu" class="hamburguesa"/>
     </header>
-    <div class="second-hero">
+    <!-- Segundo ecabezado con filtros -->
+    <div class="second-header">
         <div class="filters">
-            <div>
+            <!-- Controles de filtro por vendedor y precio -->
+            <div class="filter-container">
                 <label>Filtrar por vendedor</label>
-                <select id="sellers">
-                    
+                <select id="sellers">    
                 </select>
             </div>
-            <div>
+            <div class="filter-container">
                 <label>Filtrar por precio</label>
                 <input id="price" type="number" placeholder="Indica precio máximo">
             </div>
+            <!-- Botones para buscar y limpiar filtros -->
             <div id="buttons">
-                <button class="btn-grad" id="filtrar">Filtrar</button>
+                <button class="btn-grad" id="filtrar">Buscar</button>
                 <button class="btn-grad" id="limpiar">Limpiar filtros</button>
             </div>
         </div>
     </div>
-    
-    <main>
+    <!-- Contenedor de productos -->
+    <section>
         <div id="productos">
         </div>
-    </main>
+    </section>
+    <!-- Pie de página -->
     <footer>
         <h3>Suscríbete a nuestra newsletter</h3>
-        <div class="divNewsletter">
-            <form id="newsletterForm">
-                <input type="email" id="emailInput" class="inputNewsletter" placeholder="Correo electrónico" required>
-                <input type="submit" class="buttonSubmit" value="ACEPTAR">
-                <div class="containerCheckbox">
-                    <input type="checkbox" id="aceptoCheckbox" required>
-                    <label for="aceptoCheckbox">Acepto recibir las comunicaciones comerciales, ofertas y las últimas novedades de HANNUN.</label>
-                </div>
-            </form>
-            
-        </div>
     </footer>
     <script src="main.js"></script>
 </body>

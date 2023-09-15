@@ -1,4 +1,4 @@
-// Creo los productos
+// Datos de productos
 const products = [
     {
         nombre: 'Espejo Iriel',
@@ -86,7 +86,7 @@ const products = [
     }
 ];
 
-// Creo la barra de navegación y creo el ul con sus li > a
+// Crear la barra de navegación y enlaces
 const nav = document.querySelector("nav");
 
 nav.innerHTML += `
@@ -105,26 +105,22 @@ nav.innerHTML += `
     </li>
     </ul>
 `
+// Manejar el menú hamburguesa en pantalla móvil
 const menuHamburguesa = document.querySelector(".hamburguesa");
-
 const abrirMenu = () => {
     nav.classList.toggle("abierto");
 }
-
 menuHamburguesa.addEventListener("click", abrirMenu);
-
 
 const cerrarMenu = () => {
     if (window.innerWidth > 560) {
         nav.classList.remove("abierto");
     }
 }
-
 window.addEventListener("resize", cerrarMenu);
 
 
-// Recorrermos la lista de productos y se crea un div para cada uno
-
+// Función para pintar productos en la página
 const pintarProductos = (productos) => {
 
     const divProductos = document.querySelector("#productos");
@@ -137,7 +133,7 @@ const pintarProductos = (productos) => {
                 <div class="image-container">
                     <img class="imagen" src="${producto.imagen}">
                 </div>
-                <h3>${producto.nombre}</h3>
+                <h3><span class="producto-nombre">${producto.nombre}</span><span>&#x2661;</span></h3>
                 <p>${producto.descripcion}</p>
                 <p>${producto.seller}</p>
                 <p>${producto.precio}€</p>
@@ -146,9 +142,11 @@ const pintarProductos = (productos) => {
     }
 }
 
+
+// Inicializar la página con todos los productos
 pintarProductos(products);
 
-//Opciones del filtro
+// Llenar el select con opciones de filtro por vendedor
 const fillSelect = () => {
     const select = document.querySelector("#sellers");
     const allSellers = [];
@@ -166,28 +164,24 @@ const fillSelect = () => {
         <option value="${seller}">${seller}</option>`
     }
 }
-
 fillSelect();
 
-// FILTROS
+// Función para filtrar productos por vendedor y precio
 const botonFiltrar = document.querySelector("#filtrar");
-
 const filtrar = () => {
 
     const select = document.querySelector("#sellers");
     const price = document.querySelector("#price");
 
     const filteredElements = products.filter((prenda) => (prenda.seller === select.value || select.value === "todas") && (prenda.precio <= price.valueAsNumber || !price.valueAsNumber));
-
+    // Mostrar todos los productos filtrados
     pintarProductos(filteredElements);
 
 }
-
 botonFiltrar.addEventListener("click", filtrar);
 
-
+// Limpiar los filtros y mostrar todos los productos
 const botonLimpiar = document.querySelector("#limpiar");
-
 const limpiarFiltros = () => {
     const select = document.querySelector("#sellers");
     select.value = "todas";
@@ -197,91 +191,19 @@ const limpiarFiltros = () => {
 
     pintarProductos(products);
 }
-
 botonLimpiar.addEventListener("click", limpiarFiltros);
 
-
-// FOOTER
+// Crear el formulario de suscripción a la newsletter en el pie de página
 const footer$$ = document.querySelector('footer');
+footer$$.innerHTML += `<form id="newsletterForm">
+<input type="email" id="emailInput" class="inputNewsletter" placeholder="Correo electrónico" required>
+<input type="submit" class="buttonSubmit" value="ACEPTAR">
+<div class="containerCheckbox">
+    <input type="checkbox" id="aceptoCheckbox" required>
+    <label for="aceptoCheckbox">Acepto recibir las comunicaciones comerciales, ofertas y las últimas novedades de HANNUN.</label>
+</div>
+</form>`
 
-// footer$$.innerHTML += `<div class="divNewsletter">
-// <h3>Suscríbete a nuestra newsletter</h3>
-// <form id="newsletterForm">
-//     <input type="email" id="emailInput" class="inputNewsletter" placeholder="Correo electrónico" required>
-//     <div class="containerCheckbox">
-//         <input type="checkbox" id="aceptoCheckbox" required>
-//         <label for="aceptoCheckbox">Acepto recibir las comunicaciones comerciales, ofertas y las últimas novedades de HANNUN.</label>
-//     </div>
-//     <input type="submit" class="buttonSubmit" value="ACEPTAR">
-// </form>
-// </div>`
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const newsletterForm = document.getElementById("newsletterForm");
-
-//     newsletterForm.addEventListener("submit", function (event) {
-//         event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-//         // Validación adicional (si es necesario)
-//         const emailInput = document.getElementById("emailInput");
-//         const aceptoCheckbox = document.getElementById("aceptoCheckbox");
-
-//         if (!emailInput.validity.valid) {
-//             alert("Por favor, ingresa una dirección de correo electrónico válida.");
-//         } else if (!aceptoCheckbox.checked) {
-//             alert("Debes aceptar recibir las comunicaciones comerciales antes de enviar el formulario.");
-//         } else {
-//             // Aquí puedes enviar el formulario, por ejemplo, mediante una solicitud AJAX
-//             // o realizar cualquier otra acción que necesites.
-//             alert("Formulario enviado con éxito.");
-//             newsletterForm.reset(); // Limpia el formulario después del envío
-//         }
-//     });
-// });
-
-
-// Caja donde se pone el correo electrónico
-// const inputNewsletter = document.createElement('input');
-// inputNewsletter.classList.add('inputNewsletter')
-// inputNewsletter.setAttribute('placeholder', '   Correo electrónico'); // Aquí defines el texto del placeholder
-
-// // Botón de enviar Newsletter
-// const submitButton = document.createElement('input');
-// submitButton.setAttribute('type', 'submit');
-
-// submitButton.classList.add('buttonSubmit');
-// submitButton.value = "ACEPTAR"
-
-
-// Título Newsletter
-// const h3 = document.createElement('h3');
-// h3.innerText = "Suscríbete a nuestra newsletter"
-
-// const divFooter = document.createElement('div');
-// divFooter.classList.add('divNewsletter')
-// divFooter.appendChild(inputNewsletter);
-// divFooter.appendChild(submitButton);
-
-// div para checkbox y label
-
-// const checkboxContainer = document.createElement('div');
-// checkboxContainer.classList.add('containerCheckbox');
-
-// const checkboxInput = document.createElement('input');
-// checkboxInput.setAttribute('type', 'checkbox');
-
-// const checkboxLabel = document.createElement('label');
-// checkboxLabel.innerHTML += `Acepto recibir las comunicaciones comerciales, ofertas y las últimas novedades de HANNUN.`;
-
-
-
-
-// footer$$.append(h3);
-// footer$$.appendChild(divFooter);
-
-// footer$$.appendChild(checkboxContainer);
-// checkboxContainer.appendChild(checkboxInput);
-// checkboxContainer.appendChild(checkboxLabel);
 
 
 

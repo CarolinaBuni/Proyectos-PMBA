@@ -1,5 +1,7 @@
+/* Importación de la fuente de Google */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Variables de colores */
 :root {
     --primary-color: #000000;
     --secondary-color: #e0cfb7;
@@ -19,18 +22,22 @@
 
 }
 
+/* Estilos del encabezado */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px;
     background-image: url(/assets/hero2.webp);
+    background-position: top;
+    background-size: cover;
     height: 340px;
     margin: 20px 100px;
     border-radius: 26px;
 }
 
-.second-hero {
+/* Estilos del segundo encabezado con filtros */
+.second-header {
     border: 2px solid var(--secondary-color);
     margin: -100px 120px;
     border-radius: 26px;
@@ -38,12 +45,13 @@ header {
     
 }
 
+/* Estilos del logo */
 .logo {
     width: 200px;
     cursor: pointer;
 }
 
-
+/* Estilos de los enlaces de la barra de navegación */
 .linkList {
     display: flex;
     justify-content: center;
@@ -62,115 +70,128 @@ header {
     transition: all 0.6s ease-in-out;
 }
 
-
-
+/* Estilos del icono de menú desplegable en pantalla móvil*/
 .hamburguesa {
     display: none;
     position: relative;
     z-index: 2;
 }
 
+/* Clase para abrir el menú en pantalla móvil */
 .abierto {
     width: 200px;
 }
 
+/* Estilos del contenedor de productos */
 #productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
     gap: 50px;
-    margin: 190px 285px;
+    margin: 190px 80px;
 }
 
+/* Estilos de un producto individual */
 .producto {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
 }
-
-.producto > div {
+.image-container {
     height: 400px;
     width: 300px;
     border: 3px solid var(--quaternary-color);
     overflow: hidden;
     cursor: pointer;
+    transition: all 0.8s ease-in-out;
 }
-
-
+.image-container:hover {
+    border: 3px solid var(--highlight-color);
+    transition: all 0.8s ease-in-out;
+}
 .producto p:first-of-type {
     cursor: pointer;
     font-size: 12px;
 }
-
 .producto h3 {
-    cursor: pointer;
     font-weight: 500;
-    line-height: 1;
+    line-height: 30px;
     font-size: 14px;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    
+}
+.producto h3 span:last-child {
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.8s ease-in-out;
+    
 }
 
-.producto > div > img {
+.producto h3 span:last-child:hover{
+    color: red;
+    transition:  0.8s ease-in-out;
+}
+
+.producto-nombre {
+    cursor: pointer;
+    transition: 0.8s ease-in-out;
+}
+
+.imagen{
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: all 0.6s ease-in-out;
 }
 
-.image-container:hover .imagen {
-    scale: 1.2;
-    transition: all 0.6s ease-in-out;
-}
-
+/* Estilos del campo de entrada cuando está en foco */
 input:focus {
     box-shadow: 0 0 5px #675026;
     transition: all 0.6s ease-in-out;
 }
 
-
+/* Estilos de los contenedores de filtros */
 .filters {
     display: flex;
-    /* flex-direction: column; */
     align-items: flex-end;
     justify-content: center;
     margin-top: 100px;
     gap: 20px;
 }
-
-.filters > div {
+.filter-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-
-.filters > div > label, .filters > div > select, .filters > div > input  {
+.filter-container > label, .filter-container > select, .filter-container > input  {
     display: flex;
     width: 200px;
     padding: 10px;
     border-radius: 14px;
     border: 2px solid #E0CFB7;
 }
-
-.filters > div > select, .filters > div > input  {
+.filter-container > select, .filter-container > input  {
     text-align: center;
 }
-
-.filters > div > label {
+.filter-container > label {
     border: none;
 }
 
-
+/* Estilos de las opciones de filtro por vendedor */
 #sellers > option {
     color: #E0CFB7;
     background-color: rgba(0, 0, 0, 0.762);
 }
 
+/* Estilos de los botones de gradiente */
 .btn-grad {
     background-image: linear-gradient(to right, #DE6262 0%, #FFB88C  51%, #DE6262  100%);
-    /* padding: 15px 45px; */
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
@@ -178,26 +199,22 @@ input:focus {
     color: white;            
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    /* display: block; */
 }
-
 .btn-grad:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center; 
     color: #fff;
     text-decoration: none;
 }
 
+/* Estilos de los botones en el contenedor de filtros */
 #buttons > button {
     cursor: pointer;
     padding: 10px;
     border-radius: 14px;
     border: 2px solid #E0CFB7;
     font-weight: 500;
-    /* background-color: transparent; */
 }
-
 #buttons {
-    /* width: 100%; */
     flex-direction: row;
     display: flex;
     gap: 30px;
@@ -205,6 +222,7 @@ input:focus {
     justify-content: center;
 }
 
+/* Estilos del pie de página */
 footer {
     background-color: #D4E0C6;
     padding: 40px;
@@ -215,8 +233,8 @@ footer {
     gap: 39px;
 }
 
+/* Estilos del contenedor de la sección de suscripción a la newsletter */
 .divNewsletter{
-    /* border: 2px solid red; */
     width: 100%;
     display: flex;
     gap: 15px;
@@ -224,13 +242,13 @@ footer {
     flex-wrap: wrap;
     
 }
-
 .inputNewsletter {
     width: 75%;
     background: transparent;
     padding: 10px;
 }
 
+/* Estilos del botón de envío del formulario */
 .buttonSubmit {
     width: 20%;
     background-color: #000000;
@@ -240,21 +258,25 @@ footer {
     padding: 10px;
 }
 
+/* Estilos del contenedor del checkbox de aceptación */
 .containerCheckbox {
     display: flex;
     gap: 15px;
-    
 }
 
+/* Estilos del checkbox de aceptación */
 .containerCheckbox > input {
     width: 2%;
 }
 
+/* Estilos de la etiqueta del checkbox de aceptación */
 .containerCheckbox > label {
     font-size: 13px;
 }
 
+/* Estilos para pantallas pequeñas (máximo 670px de ancho) */
 @media (max-width: 670px) {
+    /* Estilos para el menú de navegación en pantalla móvil */
     header > nav {
         width: 0px;
         height: 100svh;
@@ -268,60 +290,65 @@ footer {
         align-items: center;
         background-color: rgba(0, 0, 0, 0.762);
     }
+    /* Estilos para la lista de enlaces */
     .linkList {
         flex-direction: column;
         justify-content: space-evenly;
         height: 70%;
     }
-
+    /* Estilos para los enlaces */
     .link a {
         color: white;
     }
-
+    /* Estilos para el hover de los enlaces */
     .link a:hover {
         color: #907757;
     }
+    /* Mostrar el icono de hamburguesa */
     .hamburguesa {
         display: block;
         width: 50px;
         cursor: pointer;
     }
-
+    /* Estilos para la cabecera */
     header {
         margin: 0;
         height: 200px;
     }
-
-    /* .second-hero {
+    /* Quito decoración del segundo header*/
+    .second-header {
         border: none;
-        width: 100%;
-        margin: 0;
-    } */
+    }
 
+    /* Estilos para el contenedor de filtros */
     .filters {
         width: 100%;
         flex-direction: column;
         align-items: center;
         margin: 0;
     }
-
-    main {
+     /* Estilos para la sección */
+    section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 145px;
     }
-
+    /* Ajustar margen superior de productos en pantalla móvil */
     #productos {
         margin-top: 150px;
     }
-
+    .producto {
+        margin-bottom: 40px;
+    }
+     /* Estilos para el pie de página */
     footer {
-        height: 90vw;
+        
         display: flex;
         justify-content: flex-start;
     }
-
+    /* Estilos para el formulario de suscripción */
     #newsletterForm {
         display: flex;
         flex-direction: column;
@@ -329,35 +356,41 @@ footer {
         align-items: center;
         justify-content: center;
     }
-
+    /* Ajustar ancho del campo de entrada de correo en pantalla móvil */
     .inputNewsletter {
         width: 100%;
         padding: 10px;
     }
-
+    /* Ajustar ancho del botón de envío en pantalla móvil */
     .buttonSubmit {
         width: 30%;
         padding: 10px;
     }
-
+     /* Ajustar ancho del checkbox de aceptación en pantalla móvil */
     .containerCheckbox > input {
-        width: 40px;
+        width: 16px;
     }
 }
 
+/* Estilos para pantallas medianas (max-width: 970px) */
 @media (max-width: 970px ){
-    .second-hero {
+     /* Eliminar el borde y margen de la segunda cabecera */
+    .second-header {
         border: none;
         margin: 0;
     }
-
+    /* Eliminar el margen de la cabecera */
     header {
         margin: 0;
     }
-
+    /* Ajustar margen superior del contenedor de filtros */
     .filters {
         margin-top: 36px;
     }
-    
+    /* Ajustar márgenes para que quepan más productos */
+    #productos {
+        margin: 0;
+        gap: 12px;
+    }
 }
 
