@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANNUN</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="/assets/logo-navgador.webp" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img class="logo" src="/assets/LOGO.avif" alt="logo">
+        <nav>
+            
+        </nav>
+
+        <img src="/assets/hamburguesa.png" alt="menu" class="hamburguesa"/>
+    </header>
+    <div class="second-hero">
+        <div class="filters">
+            <div>
+                <label>Filtrar por vendedor</label>
+                <select id="sellers">
+                    
+                </select>
+            </div>
+            <div>
+                <label>Filtrar por precio</label>
+                <input id="price" type="number" placeholder="Indica precio máximo">
+            </div>
+            <div id="buttons">
+                <button class="btn-grad" id="filtrar">Filtrar</button>
+                <button class="btn-grad" id="limpiar">Limpiar filtros</button>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <div id="productos">
+        </div>
+    </main>
+    <footer>
+        <h3>Suscríbete a nuestra newsletter</h3>
+        <div class="divNewsletter">
+            <form id="newsletterForm">
+                <input type="email" id="emailInput" class="inputNewsletter" placeholder="Correo electrónico" required>
+                <input type="submit" class="buttonSubmit" value="ACEPTAR">
+                <div class="containerCheckbox">
+                    <input type="checkbox" id="aceptoCheckbox" required>
+                    <label for="aceptoCheckbox">Acepto recibir las comunicaciones comerciales, ofertas y las últimas novedades de HANNUN.</label>
+                </div>
+            </form>
+            
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
