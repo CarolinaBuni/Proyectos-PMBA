@@ -19,7 +19,6 @@
     --quaternary-color: #d4e0c6;
     --highlight-color: #2F2407;
     --hover-color: #907757;
-
 }
 
 /* Estilos del encabezado */
@@ -128,12 +127,12 @@ header {
     cursor: pointer;
     font-size: 30px;
     transition: 0.8s ease-in-out;
-    
 }
 
 .producto h3 span:last-child:hover{
     color: red;
     transition:  0.8s ease-in-out;
+    filter: saturate(100%);
 }
 
 .producto-nombre {
@@ -148,11 +147,6 @@ header {
     transition: all 0.6s ease-in-out;
 }
 
-/* Estilos del campo de entrada cuando está en foco */
-input:focus {
-    box-shadow: 0 0 5px #675026;
-    transition: all 0.6s ease-in-out;
-}
 
 /* Estilos de los contenedores de filtros */
 .filters {
@@ -240,7 +234,6 @@ footer {
     gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
-    
 }
 .inputNewsletter {
     width: 75%;
