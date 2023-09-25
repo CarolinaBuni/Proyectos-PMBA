@@ -1,0 +1,66 @@
+export const MOCK_CARDS = [
+    {
+        _id: '62f2342c9f1539fa969dc249',
+        name: 'HTML',
+        logo: './public/images/HTML.png',
+        reviews: 15,
+        score: 4.066666666,
+    },
+    {
+        _id: '62f2342c9f1539fa969dc24a',
+        name: 'CSS',
+        logo: '/public/images/CSS.png',
+        reviews: 4,
+        score: 3.5,
+    },
+    {
+        _id: '62f2342c9f1539fa969dc24b',
+        name: 'JavaScript',
+        logo: '/public/images/JS.png',
+        reviews: 2,
+        score: 3,
+    },
+    {
+        _id: '62f2342c9f1539fa969dc24c',
+        name: 'React',
+        logo: '/public/images/REACT.png',
+        reviews: 0,
+        score: 0,
+    },
+    {
+        _id: '62f2342c9f1539fa969dc24d',
+        name: 'TypeScript',
+        logo: '/public/images/TYPESCRIPT.webp',
+        reviews: 0,
+        score: 0,
+    },
+    {
+        _id: '62f2342c9f1539fa969dc24e',
+        name: 'NodeJS',
+        logo: '/public/images/NODEJS.png',
+        reviews: 0,
+        score: 0,
+    },
+    {
+        _id: '62f2342c9f1539fa969dc24f',
+        name: 'PostgreSQL',
+        logo: '/public/images/POSTGRESQL.png',
+        reviews: 1,
+        score: 5,
+    },
+    {
+        _id: '62f2342c9f1539fa969dc24g',
+        name: 'MongoDB',
+        logo: '/public/images/MONGODB.png',
+        reviews: 0,
+        score: 0,
+    },
+    {
+        _id: '62f2342c9f1539fa969dc24h',
+        name: 'Next',
+        logo: '/public/images/NEXT.png',
+        reviews: 0,
+        score: 0,
+    },
+    
+]
