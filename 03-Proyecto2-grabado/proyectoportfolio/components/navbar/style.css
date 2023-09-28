@@ -1,0 +1,92 @@
+
+.navbar {
+    align-items: center;
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 1rem;
+    position: relative;
+    height: var(--navbar-heigh);
+    background-color: var(--color-secondary);
+    font-size: 1.5rem;
+  }
+  
+  .menu-toggle {
+    border-radius: 100%;
+    aspect-ratio: 1;
+  }
+  
+  .navbar a,
+  .navbar button {
+    font-size: 100%;
+    cursor: pointer;
+    color: var(--color-primary);
+  }
+  
+  .navbar h3 {
+    margin: 0;
+  }
+  
+  .navbar ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .navbar ul > li::before {
+    content: '📚';
+  }
+  
+  .menu-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--navbar-heigh);
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: #242424;
+  }
+  
+  .menu-content--open {
+    opacity: 1;
+    height: calc(100vh - var(--navbar-heigh));
+    transition: all 200ms ease-in-out;
+  }
+  
+  .favorites {
+    border-bottom: 1px solid var(--color-primary);
+  }
+  
+  .search {
+    flex: 1;
+  }
+  
+  .search > input {
+    font-size: 100%;
+    max-width: 20rem;
+    width: 100%;
+  }
+  
+  .menu-content > .favorites,
+  .menu-content > .search {
+    padding: 0.5rem;
+  }
+  
+  @media screen and (min-width: 500px) {
+    .menu-content {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .favorites {
+      border-bottom: 0;
+    }
+  
+    .search {
+      border-left: 1px solid var(--color-primary);
+    }
+  }
+  
