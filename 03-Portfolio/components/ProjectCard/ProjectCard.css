@@ -1,0 +1,38 @@
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+.project-card img {
+    border-radius: 0.4rem;
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+}
+.project-card > .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.project-card > .header > div {
+    display: flex;
+    gap: 1rem;
+}
+.project-card > .header > div > a > img {
+    width: 20px;
+    height: 20px;
+    filter: invert(90%);
+    transition: all 0.3s ease-in-out;
+}
+.project-card > .header > div > a > img:hover {
+    transform: scale(1.1);
+}
+.project-card > .detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.project-card > .detail > .tech {
+    color: var(--highlight);
+}
