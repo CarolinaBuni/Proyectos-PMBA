@@ -1,0 +1,476 @@
+@import url(https://db.onlinewebfonts.com/c/75914226e45d53c888d99c55e1033690?family=Ubisoft+Sans+Bold);
+/* Estilos globales */
+* {
+    box-sizing: border-box;
+    font-family: "Ubisoft Sans Bold";
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Variables de color */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #FFF;
+    --tertiary-color: #006ef5;
+    --quaternary-color: #f0f3f4;
+    --special-pink-color: #d80388;
+    --special-blue-color: #006ef5;
+    --blue-background-color: #091225;
+    --grey-background-color: #1d1e22;
+}
+/* Encabezado */
+header {
+    align-items: center;
+    background-color: var(--primary-color);
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    cursor: pointer;
+    height: 30px;
+    width: 93px;
+}
+
+header > nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links {
+    align-items: center;
+    display: flex;
+    font-family: "Ubisoft Sans Bold";
+    font-size: 1em;
+    font-weight: 400;
+    gap: 20px;
+    justify-content: center;
+    line-height: 24px;
+    width: 100%;
+}
+
+a {
+    color: var(--secondary-color);
+}
+
+.menu {
+    display: none;
+}
+/* Estilos para la sección principal de la página de inicio */
+#hero {
+    align-items: center;
+    background-image: url(/assets/backgroud.avif);
+    background-position: center;
+    background-size: cover;
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-buttons {
+    align-items: center;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.hero-buttons button {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 50px;
+}
+/* Encabezado 2 */
+h2 {
+    background-color: var(--quaternary-color);
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    padding-bottom: 45px;
+    padding-top: 50px;
+    text-align: center;
+}
+/* Encabezado 3 */
+h3 {
+    padding-bottom: 25px;
+}
+
+
+
+.hero-content > p {
+    font-family: Ubisoft Sans,sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin-top: 15px;
+    text-transform: none;
+}
+/* Sección Explorar */
+#explorar {
+    background-color: var(--quaternary-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+#explorar img, h3 {
+    cursor: pointer;
+}
+
+article {
+    flex-basis: 250px;
+}
+
+article > img {
+    width: 100%;
+}
+/* Botón de la sección para ver más juegos */
+.button {
+    background-color: var(--quaternary-color);
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+button {
+    background-color: var(--special-pink-color);
+    border-radius: 30px;
+    border: 2px solid var(--special-pink-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: .9375rem;
+    font-weight: 700;
+    height: 54px;
+    letter-spacing: .1rem;
+    margin-bottom: 50px;
+    max-width: 300px;
+    min-width: 100px;
+    text-align: center;
+    width: 250px;
+}
+/* Sección de la tienda Ubisoft */
+#store {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 80px;
+    padding: 20px;
+}
+
+.store-content {
+    align-items: flex-start;
+    display: flex;
+    flex-basis: 500px;
+    justify-content: center;
+    text-align: center;
+}
+
+.store-content > img {
+    width: 100%;
+}
+
+.store-content > h3 {
+    color: var(--secondary-color);
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+    padding: 20px;
+    position: absolute;
+}
+
+main > h3 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    padding-bottom: 27px;
+    padding-top: 50px;
+    text-align: center;
+}
+/* Banner promocional */
+#banner {
+    align-items: center;
+    background-color: var(--blue-background-color);
+    color: var(--secondary-color);
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.banner-container-img {
+    width: 450px;
+}
+
+.banner-container-img > img {
+    width: 100%;
+}
+
+.banner-container-tittle > h3 {
+    font-size: 2.875rem;
+    line-height: 2.875rem;
+}
+
+.banner-container-tittle > p {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+}
+
+.connect {
+    background-color: var(--special-blue-color);
+    border: 2px solid var(--special-blue-color);
+    margin-top: 25px;
+}
+/* Pie de página */
+.footer-nav > p {
+    -webkit-font-smoothing: antialiased;
+    color: rgb(155, 155, 155);
+    font-family: ubisoft_sans, sans-serif;
+    font-size: 0.8125em;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.125em;
+    margin: 0px;
+}
+
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.footer-nav {
+    align-items: center;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    padding: 15px;
+}
+
+.footer-nav > ul {
+    display: flex;
+    flex-grow: 0.6;
+    gap: 25px;
+    justify-content: center;
+}
+
+.social-icons {
+    width: 34px;
+}
+
+#copyright > div {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#copyright  {
+    background-color: var(--grey-background-color);
+}
+#copyright > nav {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+#copyright > nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.terms {
+    -webkit-font-smoothing: antialiased;
+    font-size: 0.75em;
+    line-height: 1em;
+    text-align: right;
+    width: 300px;
+}
+
+.last-ul {
+    align-items: flex-end;
+    text-align: right;
+}
+
+
+select {
+    background-color: transparent;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 1.25em;
+    line-height: 2em;
+}
+
+label {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    top: 52px;
+    right: 148px;
+}
+
+label::before {
+    content: url(./assets/globo.png);
+    
+}
+
+option {
+    background-color: var(--grey-background-color);
+}
+
+/* Media queries para responsive max-width: 390px */
+@media (max-width: 390px) {
+    #store {
+        flex-wrap: wrap;
+    }
+
+    #hero {
+        position: relative;
+    }
+
+    .hero-content > h1 {
+        margin-top: 15px;
+        position: absolute;
+        top: 0;
+    }
+
+    .hero-content > p {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 15px;
+    }
+
+    .hero-buttons button {
+        font-size: .75rem;
+        line-height: 14px;
+        width: 46%;
+    }
+
+    main > h2 {
+        font-size: 1.5rem;
+    }
+
+    #banner {
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .banner-container-tittle > h3 {
+        font-size: 2.875rem;
+        line-height: 2.875rem;
+    }
+
+    .banner-container-tittle > p {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        margin: 0 25px;
+        
+    }
+
+    .footer-nav > p {
+        display: none;
+    }
+
+    .footer-nav > ul {
+        gap: 20px;
+    }
+
+    .social-icons {
+        width: 40px;
+    }
+
+    #copyright {
+        gap: 98px;
+        text-align: center;
+    }
+
+    #copyright > nav {
+        gap: 50px;
+        padding: 75px;
+    }
+
+    #copyright > nav ul {
+        align-items: center;
+    }
+
+    label {
+        right: 100px;
+    }
+
+    .terms {
+        text-align: center;
+    }
+
+
+}
+/* Media queries para responsive max-width: 820px */
+@media (max-width: 820px){
+    #copyright > nav ul {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #copyright > nav {
+        gap: 25px;
+    }
+
+    #copyright > nav ul:nth-child(2){
+        order: -2;
+    }
+
+    #copyright > nav ul:nth-child(3){
+        order: -2;
+    }
+
+    #copyright > nav ul:nth-child(4){
+        order: -2;
+    }
+
+    .logo {
+        height: 39px;
+        width: 122px;
+    }
+
+    .terms {
+        font-family: ubisoft_sans, sans-serif;
+        text-align: center;
+        width: 100%;
+    }
+
+    label {
+        right: 100px;
+    }
+
+    .footer-nav > p {
+        display: none;
+    }
+}
+
+/* Media queries para responsive max-width: 600px */
+@media (max-width: 600px){
+    header > nav {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+}
+

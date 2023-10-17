@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.cdnfonts.com/css/death-star');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-image: url(./public/assets/home-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: #FFF;
+    font-size: 41px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 30px;
+    transition: all 0.6s ease 0s;
+    cursor: pointer;
+}
+
+button:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.6s ease 0s;
+}
+
+section {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+h1 {
+    color: #CEB7FF;
+    border: 2px rgb(206, 183, 255, 1);
+    text-shadow: 0px 0px 5px #B377FF;
+    font-family: 'Death Star', sans-serif;                                            
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+h1:hover {
+    box-shadow: 0 0 20px 10px #ff00ff;
+    transition: all 0.8s ease-in-out;
+
+}
+
+aside {
+    margin-top: 150px;
+    display: flex;
+    margin-left: 87px;
+    /* border: 2px solid red; */
+    width: 20%;
+    /* height: 40vh; */
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.link {
+    border-radius: 50px;
+    transition: all 0.8s ease-in-out;
+    border: none;
+}
+
+.link:hover {
+    box-shadow: 0 0 20px 10px #00ffff;
+    transition: all 0.8s ease-in-out;
+}
