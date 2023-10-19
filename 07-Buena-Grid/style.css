@@ -1,0 +1,114 @@
+:root {
+    --primary-color: rgb(236, 236, 236);
+    --secondary-color: rgb(21, 21, 21);
+    --blue-color: #2bc5cd;
+    --orange-color: #ff693d;
+    --border: 2px solid var(--blue-color);
+    --spacing: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos globales*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+  /* Resto del CSS */
+
+.school {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+}
+
+.student {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
+}
+
+.time {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/773a5aa425b1502aaac14708/f2b45624-c8f6-3aa0-0ee4-58adda3c89b0.jpg);
+}
+
+.alumni {
+    background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/89993ff69c3e5244ad2bf1ba/blondestudentgirlissmilingholdingfoldernotebookherhandsuniversitybackground_101969664.jpg);
+}
+
+.alumni,
+.school,
+.student,
+.time {
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+
+body {
+    background-color: var(--primary-color);
+    display: grid;
+    gap: var(--spacing);
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 350px;
+    padding: var(--spacing);
+}
+
+
+header {
+    background-color: var(--blue-color);
+    color: var(--primary-color);
+    display: grid;
+    grid-row: 1 / 3;
+    text-align: center;
+    padding: var(--spacing);
+}
+
+header > h1 {
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+
+main {
+    border: var(--border);
+    color: var(--blue-color);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+footer {
+    background-color: var(--orange-color);
+    color: var(--primary-color);
+    grid-column: 2 / 4;
+    padding: var(--spacing);
+}
+
+footer * {
+    margin: 10px;
+}
+
+footer > button {
+    border: none;
+    height: fit-content;
+    padding: var(--spacing);
+    text-transform: uppercase;
+    width: 210px;
+}
+
+@media (max-width: 650px){
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 390px){
+    footer {
+        padding: 0;
+    }
+}
