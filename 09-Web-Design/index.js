@@ -163,8 +163,8 @@ const renderProducts = (products) => {
                 <h2>${product.name}</h2>
                 <p class="seller">${product.seller} </p>
                 <p>${product.price}€</p>
-                <button class="now add">Añadir a carrito</button>
             </div>
+            <button class='now'>Añadir a carrito</button>
         </div>
         `
     }
