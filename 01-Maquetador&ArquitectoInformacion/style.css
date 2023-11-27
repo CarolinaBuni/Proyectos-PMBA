@@ -1,0 +1,630 @@
+/* Importa de fuentes */
+@import url('https://fonts.cdnfonts.com/css/sst');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset de estilos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'SST', sans-serif;                                             
+}
+
+/* Variables para colores */
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #000000;
+    --background-color: #003697;
+    --secondary-background-color: #1f1f1f;
+    --buttons-color: #0070cc;
+    --links-color-text: #757575;
+    --border-color-primary: #383838;
+
+    /* Variables para tamaños*/
+    --border-radius-XS: 5px;
+    --border-radius-S: 10px;
+
+    --gap-size-XS: 5px;
+    --gap-size-S: 15px;
+    --gap-size-M: 30px;
+    --gap-size-L: 50px;
+
+    --padding-size-XS: 10px;
+    --padding-size-S: 15px;
+    --padding-size-M: 20px;
+
+    --font-size-S: 16px;
+    --font-size-M: 18px;
+    --font-size-L: 26px;
+
+    --font-weight-S: 400;
+    --font-weight-M: 500;
+    --font-weight-M-2: 600;
+    --font-weight-L: 700;
+
+    --line-height-XS: 16px;
+    --line-heigt-S: 21px;
+    --line-height-M: 25px;
+}
+
+/* Estilos para el encabezado */
+header {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 3% 70% 27%;
+    padding: 9px 25px;
+}
+
+.logo {
+    height: 34px;
+    width: 34px;
+}
+
+/* Estilos para la barra de navegación */
+
+.header-nav {
+    padding-left: var(--padding-size-M)
+}
+.header-nav-list {
+    display: flex;
+    gap: var(--gap-size-M);
+    width: 100%;
+}
+
+/* Estilos para los enlaces de navegación */
+.header-nav-list li a {
+    color: var(--links-color-text);
+    font-size: var(--font-size-M);
+    font-weight: var(--font-weight-M);
+    line-height: var(--line-heigt-S);
+}
+
+.inputs-container {
+    display: flex;
+    gap: var(--gap-size-S);
+    justify-content: flex-end;
+}
+
+.inputs-container > span > input:last-of-type::placeholder {
+    font-weight: var(--font-weight-S);
+    line-height: var(--line-heigt-S);
+    padding-left: var(--padding-size-XS);
+}
+
+.search {
+    display: flex;
+    position: relative;
+}
+
+.search > img {
+    cursor: pointer;
+}
+
+.search > img {
+    position: relative;
+    right: 17%;
+    width: 16px;
+}
+
+
+.button-logging {
+    background-color: var(--buttons-color);
+    border-radius: 999px 999px 999px 999px;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: var(--font-size-S);
+    letter-spacing: .4px;
+    line-height: var(--line-heigt-S);
+    padding: 5px var(--padding-size-XS);
+}
+
+/* Estilos para Hero */
+
+.hero {
+    background-image: url(./assets/Slider\ Hero\ Image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80svh;
+    position: relative;
+}
+
+div.hero-container > img.miles {
+    position: absolute;
+    width: 422px;
+    bottom: 40%;
+    left: 10%;
+    /* height: 153px; */
+}
+
+.menu {
+    display: none;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.hero-container > img {
+    width: 100%;
+}
+
+.hero-title {
+    color: var(--primary-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.hero-title > div > span {
+    display: flex;
+    gap: var(--gap-size-S);
+    padding-top: var(--padding-size-S);
+}
+
+.discover > span:first-of-type > p:first-of-type {
+    font-weight: var(--font-weight-L);
+}
+
+.hero-title > div > span > p {
+    color:  #C4C4C4;
+    font-weight: var(--font-weight-M);
+    letter-spacing: 0.72px;
+}
+
+div.hero-links > span > p {
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 35%;
+}
+
+.buttons > img {
+    cursor: pointer;
+    transition: all ease-in-out 0.6s;
+    width: 40px;
+}
+
+.buttons > img:hover {
+    transform: scale(1.1);
+    transition: all ease-in-out 0.6s;
+}
+
+.buttons > img:first-child {
+    margin-left: 4rem;
+}
+
+.buttons > img:nth-child(2){
+    margin-right: 4rem;
+}
+
+
+/* Estilos para contenedor Trending */
+.trending-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-size-L);
+    justify-content: center;
+    margin-top: var(--gap-size-L);
+    position: relative;
+    z-index: 9;
+}
+
+.trending-item {
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-S);
+    box-shadow: 0px -40px 55px 35px #29262ebf inset;
+    color: var(--primary-color);
+    display: flex;
+    height: 128px;
+    justify-content: center;
+    mix-blend-mode: multiply;
+    position: relative;
+    transition: all ease-in-out 0.8s;
+    width: 370px;
+}
+
+.trending-item:hover {
+    filter: brightness(1.2);
+    transition: all ease-in-out 0.8s;
+}
+
+.trending-item.fall {
+    background-image: url(./assets/FallGuys.png);
+}
+
+.trending-item.demon {
+    background-image: url(./assets/DemonSoul.png);
+}
+.trending-item.cod {
+    background-image: url(./assets/CallOfDuty.png);
+}
+
+#trending{
+    color: var(--primary-color);
+    font-size: var(--font-size-L);
+    font-weight: var(--font-weight-L);
+    line-height: var(--line-height-M);
+    text-align: center; 
+}
+
+.platform {
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-XS);
+    border: 2px solid var(--secondary-color);
+    left: 10px;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    width: 37px;
+    z-index: 9999;
+}
+
+.platform.ps5 {
+    background-color: transparent;
+    border: none;
+    width: 37px;
+}
+
+.price {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.price > p, input {
+    font-weight: var(--font-weight-M-2);
+}
+
+.price > p {
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.add {
+    background-color: var(--buttons-color);
+    border-radius: 10px 0px;
+    border: none;
+    box-shadow: 0px 0px 15px 0px #0072CE;
+    color: var(--primary-color);
+    font-size: large;
+    padding: 3px 9px;
+}
+
+
+/* Estilos para los productos */
+.newReleases {
+    background-color: var(--secondary-background-color);
+}
+
+.newReleases > h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: var(--font-weight-L);
+    line-height: var(--line-height-M);
+    padding-top: 10rem; 
+    text-align: center;
+}
+
+.products > li {
+    align-items: flex-start;
+    border-radius: var(--border-radius-S);
+    border: 1px solid var(--border-color-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.products > li > input {
+    transition: all ease-in-out 0.8s;
+}
+
+.img-hover {
+	transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+}
+
+.img-hover:hover {
+	-webkit-transition: .3s ease-in-out;
+	filter: grayscale(100%);
+	transition: .3s ease-in-out;
+    -webkit-filter: grayscale(100%);
+}
+
+.products > li > input:hover{
+    transform: scale(1.1);
+    transition: all ease-in-out 0.8s;
+}
+
+.products > li > a > img:first-child {
+    border-radius: var(--border-radius-S);
+    height: 43vh;
+    object-fit: cover;
+    width: 444px;
+}
+
+
+.products > li > h3 {
+    color: var(--primary-color);
+    font-family: 'Inter', sans-serif;
+    font-size: var(--font-size-M);
+    font-weight: 800;
+}
+
+.products > li > p {
+    color:  #C4C4C4;
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: var(--font-weight-S);
+    line-height: var(--line-height-XS);
+}
+
+.products > li > input {
+    border-radius: var(--border-radius-S);
+    min-width: 7rem;
+}
+
+.warning {
+    cursor: pointer;
+    margin: 0 5px 5px;
+}
+
+p.PS4 {
+    border-radius: 6px;
+    border: 1px solid  var(--border-color-primary);
+    padding: 3px;
+}
+
+.products {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 81px;
+}
+
+.logos {
+    align-items: center;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para la sección del banner promocional */
+
+.banner {
+    background-image: url(./assets/Mask.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 44svh;
+    position: relative;
+}
+
+.banner-title {
+    align-items: center;
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    right: 50%;
+    top: 40%;
+}
+
+.banner-title * {
+    font-family: 'Inter';
+}
+
+.banner-title > h2 {
+    font-size: 37px;
+    font-weight: var(--font-weight-M-2);
+}
+
+.banner-title > input {
+    background-color: #3c434a;
+    border-radius: 5px;
+    border: 2px solid #014176;
+    border: none;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-M-2);
+    line-height: var(--line-height-XS);
+    padding: 7px 18px;
+}
+
+.banner > img {
+    display: flex;
+    left: 50%;
+    position: relative;
+}
+
+.tm {
+    font-size: 8px;
+}
+
+#ps-now {
+    align-items: center;
+    display: flex;
+    gap: 25px;
+}
+
+.banner-title > input {
+    cursor: pointer;
+}
+
+#ps-now > img {
+    width: 50px;
+}
+
+#ps-now > h2 {
+    cursor: pointer;
+    font-size: 4rem;
+}
+
+/* Estilos para Footer */
+footer {
+    align-items: center;
+    background-color: #065baa;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding: 30px;
+}
+
+footer > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+footer > img {
+    cursor: pointer;
+}
+
+.footer-links > li > a {
+    color: var(--primary-color);
+    font-family: 'Inter';
+    font-weight: var(--font-weight-S);
+    line-height: var(--line-height-XS);
+}
+
+.social-icon {
+    border-radius: 16px;
+    box-shadow: 0 5px 9px 0 var(--secondary-background-color);
+    height: 87px;
+    transition: all ease-in-out 0.8s;
+    width: 87px;
+}
+
+.social-icon:hover {
+    box-shadow: none;
+    transition: all ease-in-out 0.8s;
+}
+
+.social-links {
+    gap: var(--gap-size-M);
+}
+
+@media only screen and (min-width: 390px) and (max-width: 430px ) {
+    .newReleases > h2 {
+        padding-top: 0; 
+    }
+    .search > input  {
+        display: none;
+    }
+    .search > img {
+        width: 25px;
+    }
+    .hero-container {
+        position: relative;
+        top: 8%;
+    }
+    .hero-title, .buttons {
+        display: none;
+    }
+
+    div.hero-container > img.miles {
+        width: auto;
+    }
+
+    .trending-container {
+        display: none;
+    }
+
+    #trending {
+        display: none;
+    }
+
+    .newReleases {
+        text-align: center;
+    }
+
+    .products > li > a > img:first-child {
+        width: auto;
+    }
+
+    section {
+        background-size: contain;
+    }
+
+    .banner > img {
+        display: none;
+    }
+
+    .banner-title {
+        top: auto;
+        right: auto;
+    }
+
+    #ps-now {
+        padding: 0 var(--padding-size-S);
+    }
+
+    #ps-now > h2 {
+        font-size: 3rem;
+    }
+
+    .banner-title > p {
+        text-align: center;
+    }
+
+    .hero {
+        background-position: top;
+        height: 58svh;
+    }
+
+    .products > li > img:first-child  {
+        width: auto;
+    }
+
+    .footer-links, .social-links {
+        justify-content: center;
+    }
+
+    .social-icon {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+
+
+@media screen and (max-width: 1025px) {
+    .menu {
+        display: block;
+    }
+    .header-nav-list {
+        display: none;
+    }
+
+    .products > li > a > img:first-child {
+        width: auto;
+    }
+
+    header {
+        display: inline-flex;
+        justify-content: space-evenly;
+        padding: 0;
+        width: 100%;
+    }
+    .banner-title {
+        right: auto;
+        top: 94px;
+    }
+}
+
