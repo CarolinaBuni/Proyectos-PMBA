@@ -125,7 +125,7 @@ header {
 /* Estilos para Hero */
 
 .hero {
-    background-image: url(./assets/Slider\ Hero\ Image.png);
+    background-image: url(./assets/Hero.avif);
     background-repeat: no-repeat;
     background-size: cover;
     height: 80svh;
@@ -137,7 +137,6 @@ div.hero-container > img.miles {
     width: 422px;
     bottom: 40%;
     left: 10%;
-    /* height: 153px; */
 }
 
 .menu {
@@ -520,7 +519,11 @@ footer > img {
     gap: var(--gap-size-M);
 }
 
-@media only screen and (min-width: 390px) and (max-width: 430px ) {
+/* Media Queries */
+
+
+/* Para pantallas mmóviles hasta 430px */
+@media only screen and (min-width: 300px) and (max-width: 430px ) {
     .newReleases > h2 {
         padding-top: 0; 
     }
@@ -601,7 +604,6 @@ footer > img {
         width: 40px;
     }
 }
-
 
 
 @media screen and (max-width: 1025px) {
