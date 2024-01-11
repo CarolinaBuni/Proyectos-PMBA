@@ -5,3 +5,12 @@ input {
     padding: 15px 20px;
     border-radius: 25px;
 }
+
+.imgContainer {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+}

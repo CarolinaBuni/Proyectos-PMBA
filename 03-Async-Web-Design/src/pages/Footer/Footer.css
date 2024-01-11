@@ -1,0 +1,10 @@
+footer > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    border-top: 2px solid black;
+}
+
