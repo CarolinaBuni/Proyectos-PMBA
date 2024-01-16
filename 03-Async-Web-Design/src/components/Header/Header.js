@@ -1,7 +1,7 @@
 export const divApp = document.querySelector('#app');
-import './Header.css';
-
 export const header = document.createElement('header');
+
+import './Header.css';
 
 header.innerHTML += `
     <div class="header-links">

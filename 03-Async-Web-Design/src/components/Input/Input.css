@@ -6,11 +6,11 @@ input {
     border-radius: 25px;
 }
 
-.imgContainer {
+/* .imgContainer {
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     margin-bottom: 15px;
-}
+} */

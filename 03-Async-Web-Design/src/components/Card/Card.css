@@ -1,6 +1,35 @@
-/* .photo {
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.imgContainer {
+    width: 300px;
+    border-radius: 16px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin: 15px;
+}
+
+.photo {
     border-radius: 16px;
     cursor: pointer;
-} */
+    width: 100%;
+    object-fit: cover;
+    transition: all ease-in-out 0.2s;
+}
 
-
+.photo:hover {
+    filter: brightness(50%);
+    transform: scale(1.05);
+    transition: all ease-in-out 0.2s;
+    border-radius: 16px;
+}
