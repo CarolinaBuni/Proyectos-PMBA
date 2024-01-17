@@ -9,6 +9,7 @@ footer > ul {
 }
 
 footer > ul li a {
+    color: black;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
