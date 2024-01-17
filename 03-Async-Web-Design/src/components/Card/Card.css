@@ -8,28 +8,27 @@
 }
 
 .imgContainer {
-    width: 300px;
-    border-radius: 16px;
-    height: auto;
-    display: flex;
     align-items: center;
+    border-radius: 16px;
+    display: flex;
+    height: auto;
     justify-content: center;
-    overflow: hidden;
-    margin-bottom: 15px;
     margin: 15px;
+    overflow: hidden;
+    width: 300px;
 }
 
 .photo {
     border-radius: 16px;
-    cursor: pointer;
-    width: 100%;
+    cursor: zoom-in;
     object-fit: cover;
     transition: all ease-in-out 0.2s;
+    width: 100%;
 }
 
 .photo:hover {
+    border-radius: 16px;
     filter: brightness(50%);
     transform: scale(1.05);
     transition: all ease-in-out 0.2s;
-    border-radius: 16px;
 }

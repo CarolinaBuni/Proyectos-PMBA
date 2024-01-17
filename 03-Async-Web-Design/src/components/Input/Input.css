@@ -1,16 +1,8 @@
 input {
-    flex-grow: 1;
-    border: none;
     background-color: rgba(118, 118, 118, 0.325);
-    padding: 15px 20px;
     border-radius: 25px;
+    border: none;
+    flex-grow: 1;
+    padding: 15px 20px;
 }
 
-/* .imgContainer {
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-bottom: 15px;
-} */

@@ -2,7 +2,7 @@ export const divApp = document.querySelector('#app');
 export const header = document.createElement('header');
 
 import './Header.css';
-
+// Agregar contenido al Header
 header.innerHTML += `
     <div class="header-links">
         <img class="logo" src="/public/LogoPinterest.svg" alt="Logo Pinterest">

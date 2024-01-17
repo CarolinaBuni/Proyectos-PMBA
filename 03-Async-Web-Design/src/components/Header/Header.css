@@ -1,34 +1,40 @@
 header {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
 .header-links {
-    display: flex;
     align-items: center;
+    display: flex;
     flex-grow: 0.1;
     justify-content: space-around;
 }
 
+header p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
 .header-links > p:first-of-type {
-    border-radius: 24px;
     background-color: #111111;
+    border-radius: 24px;
     color: white;
     padding: 10px 20px;
 }
 
 .logo {
-    width: 24px;
-    height: 24px;
     filter: invert(20%) sepia(96%) saturate(4097%) hue-rotate(343deg) brightness(107%) contrast(133%);
+    height: 24px;
+    width: 24px;
 }
 
 .header-icons {
-    flex-grow: 0.1;
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-grow: 0.1;
     justify-content: space-around;
 }
 
@@ -38,8 +44,8 @@ header {
 
 .profile {
     border-radius: 50%;
-    width: 24px;
     height: 24px;
+    width: 24px;
 }
 
 @media screen and (max-width: 850px) {
@@ -49,9 +55,9 @@ header {
 }
 @media screen and (max-width: 550px) {
     input {
-        order: 3;
         flex-grow: 0.8;
         margin-top: 10px;
+        order: 3;
     }
     header {
         flex-wrap: wrap;
