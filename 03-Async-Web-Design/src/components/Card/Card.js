@@ -17,7 +17,7 @@ export const showGallery = async () => {
             for (const c of res) {
                 const imageDiv = document.createElement('div')
                 const img = document.createElement("img");
-                console.log(c);
+                // console.log(c);
 
                 // Configurar la imagen y el contenedor
                 img.classList.add('photo')

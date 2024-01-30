@@ -1,6 +1,6 @@
 import { searchWord } from './src/components/Input/Input';
 import { footer } from './src/components/Footer/Footer';
-import { divApp, header } from './src/components/Header/Header';
+import { divApp, header, refreshGallery } from './src/components/Header/Header';
 import { section, showGallery } from './src/components/Card/Card';
 import './style.css';
 
@@ -12,6 +12,10 @@ const initializeApp = async () => {
 
   // Agregar header, section y footer directamente al divApp
   divApp.appendChild(header);
+  refreshGallery();
+
+
+
   divApp.appendChild(section);
   divApp.appendChild(footer);
 

@@ -6,3 +6,11 @@ input {
     padding: 15px 20px;
 }
 
+
+
+@media screen and (max-width: 500px) {
+    input {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

@@ -1,12 +1,13 @@
-export const divApp = document.querySelector('#app');
-export const header = document.createElement('header');
+export const divApp = document.querySelector("#app");
+export const header = document.createElement("header");
 
-import './Header.css';
+import showGallery, { section } from "../Card/Card";
+import "./Header.css";
 // Agregar contenido al Header
 header.innerHTML += `
     <div class="header-links">
         <img class="logo" src="/LogoPinterest.svg" alt="Logo Pinterest">
-        <p>Inicio</p>
+        <p id='inicio'>Inicio</p>
         <p>Explorar</p>
         <p>Crear</p>
     </div>
@@ -18,7 +19,15 @@ header.innerHTML += `
         <img src="arrow-icon.svg" alt="Arrow">
     </div>
     
-`
+`;
 
+export const refreshGallery = () => {
+    const refreshButton = document.getElementById("inicio");
+    console.log(refreshButton);
+    refreshButton.addEventListener("click", () => {
+        section.innerHTML = "";
+        showGallery(section);
+    });
+};
 
 
