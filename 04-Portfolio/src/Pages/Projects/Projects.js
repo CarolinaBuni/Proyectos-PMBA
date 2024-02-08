@@ -30,10 +30,10 @@ export const renderProjects = () => {
                         <p>${project.tech.join(" - ")}</p>
 
                             <a href="${project.link}" target='_blank'>
-                                <img src="/public/assets/enlace.png" alt="icono enlace"/>
+                                <img src="/assets/enlace.png" alt="icono enlace"/>
                             </a>
                             <a href="${project.github}" target='_blank'>
-                                <img src="/public/assets/iconoGitHub.svg" alt="icono GitHub"/>
+                                <img src="/assets/iconoGitHub.svg" alt="icono GitHub"/>
                             </a>
                     </div>
         `;
