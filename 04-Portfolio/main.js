@@ -1,82 +1,32 @@
-import { PROJECTS } from './src/components/Projects';
-import './style.css';
+import { aside$$ } from "./src/components/Aside/Aside";
+import { setupFormAnimation } from "./src/components/ButtonSend/ButtonSend";
+import { buttonOpen } from "./src/components/ButtonToOpen/ButtonToOpen";
+import { headerData } from "./src/components/Header/Header";
 
-const header$$ = document.querySelector('header');
-const headerButton = document.createElement('button');
-headerButton.textContent = 'CONTACT ME';
+import { ponerProfile } from "./src/Pages/About/About";
+import { Contact } from "./src/Pages/ContactMe/ContactMe";
+import { renderEducation } from "./src/Pages/Education/Education";
+import { renderExperience } from "./src/Pages/Experience/Experience";
+import { renderProjects } from "./src/Pages/Projects/Projects";
 
-header$$.appendChild(headerButton);
+import "./style.css";
 
-const sectionElement = document.createElement('section');
-const imageElement = document.createElement('img');
-const h1 = document.createElement('h1');
-h1.textContent = 'I AM CAROLINA';
+export const divApp = document.getElementById("app");
 
-imageElement.className = 'hero';
-imageElement.src = './public/assets/hero.png';
-imageElement.alt = 'hero';
+export const homeContainer = document.createElement("div");
+homeContainer.setAttribute("id", "home-container");
+headerData();
 
-const aside = document.createElement('aside');
-const ulElement = document.createElement('ul');
-ulElement.className = 'ulElement';
+export const main$$ = document.createElement("main");
 
-ulElement.innerHTML = `
-    <li>
-        <a href="https://github.com/CarolinaBuni">
-        <img class="link" src="./public/assets/logoGithub.png" alt="Logo GitHub">
-        </a>
-    </li>
-    <li>
-        <a href="https://www.instagram.com/carou_pipoca/">
-        <img class="link"  src="./public/assets/logoInstagram.png" alt="Logo Instagram">
-        </a>
-    </li>
-    <li>
-        <a href="https://www.linkedin.com/in/carolina-buni-de-jes%C3%BAs-48b23822b/">
-        <img class="link"  src="./public/assets/logoLinkedin.png" alt="Logo LinkedIn">
-        </a>
-    </li>
-    <li>
-        <a href="URL_del_enlace1">
-        <img class="link"  src="./public/assets/logoGithub.png" alt="Descripción de la imagen 1">
-        </a>
-    </li>
-    <li>
-        <a href="URL_del_enlace1">
-        <img class="link"  src="./public/assets/logoGithub.png" alt="Descripción de la imagen 1">
-        </a>
-    </li>
-`
+main$$.setAttribute("id", "main");
+divApp.appendChild(main$$);
 
-// for(let i = 0; i < 5; i++){
-//     const liElement = document.createElement('li');
-
-
-//     const imgLogoElement = document.createElement('img');
-//     imgLogoElement.src = './public/assets/logoGithub.png'
-//     imgLogoElement.alt = 'Logo Github'
-
-
-//     const linkElement = document.createElement('a');
-//     linkElement.href = 'https://github.com/CarolinaBuni';
-
-//     liElement.appendChild(linkElement);
-//     linkElement.appendChild(imgLogoElement);
-//     ulElement.appendChild(liElement);
-// }
-
-
-aside.appendChild(ulElement);
-
-
-sectionElement.appendChild(imageElement);
-sectionElement.appendChild(h1);
-document.body.appendChild(sectionElement);
-document.body.appendChild(aside)
-
-
-
-
-
-
-
+ponerProfile();
+aside$$();
+buttonOpen();
+renderEducation();
+renderExperience();
+renderProjects();
+Contact();
+setupFormAnimation();

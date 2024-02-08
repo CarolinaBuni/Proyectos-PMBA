@@ -1,0 +1,56 @@
+/* Estilos para el Header */
+header {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+/* Estilos para la lista de navegación */
+.ul-nav-bar {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.li-nav-bar {
+	margin: var(--margin-xm) 0;
+	padding: var(--padding-s) var(--padding-m)
+		var(--padding-s) var(--padding-s);
+}
+/* Estilos para los enlaces dentro de la lista de navegación */
+.li-nav-bar > a {
+	color: var(--primary-text-color);
+	cursor: pointer;
+	font-family: "Bebas Neue", sans-serif;
+	font-size: 41px;
+	font-weight: var(--font-weight-s);
+	transition: all 0.6s ease 0s;
+	transition: all 0.8s ease-in-out;
+}
+/* Estilos CSS para los enlaces de la lista de navegación para el hover */
+.li-nav-bar > a:hover {
+	text-shadow: 0px 4px 4px var(--blue-hover-color);
+	transition: all 0.8s ease-in-out;
+}
+/* Media query para pantallas con un ancho máximo de 390px */
+@media screen and (max-width: 390px) {
+	.li-nav-bar > a {
+		font-size: 25px;
+	}
+
+	.li-nav-bar {
+		padding: 0;
+	}
+
+	header {
+		justify-content: center;
+	}
+
+	.nav-bar {
+		margin-top: var(--margin-l);
+	}
+
+	.ul-nav-bar {
+		gap: 10px;
+	}
+}
+
+

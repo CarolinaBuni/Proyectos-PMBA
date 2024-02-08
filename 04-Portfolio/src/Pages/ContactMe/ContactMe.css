@@ -1,0 +1,84 @@
+/* Estilos para la sección "ContactMe" */
+#contact {
+	align-items: center;
+	background-image: url("/public//assets/ContactMe.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	height: 87vh;
+	padding-top: var(--padding-xs);
+}
+/* Estilos para el contenido de la sección de contacto */
+.contact-content {
+	display: flex;
+	justify-content: center;
+	margin-top: var(--margin-ss);
+	width: 100%;
+}
+
+#contactForm {
+	width: 50%;
+}
+
+.form-group > input,
+textarea {
+	background-color: var(--bg-form-color);
+	border: none;
+}
+
+#contact > div > p {
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: var(--stroke-m)
+		var(--secondary-text-color);
+	filter: drop-shadow(
+		0px 0px 4px var(--secondary-text-color)
+	);
+	font-family: "Death Star";
+	font-size: var(--font-size-xl);
+}
+/* Estilos para los elementos del formulario */
+.form-group {
+	display: flex;
+	margin-bottom: var(--margin-l);
+}
+
+.form-group label {
+	color: var(--primary-text-color);
+	font-family: "Bebas Neue";
+	font-size: 38px;
+	margin-right: var(--margin-xm);
+	white-space: nowrap;
+	width: 150px;
+}
+
+.form-group input,
+.form-group textarea {
+	flex: 1;
+}
+
+.form-group > textarea {
+	height: 24vh;
+}
+/* Estilos para el texto de marcador de posición */
+input::placeholder,
+textarea::placeholder {
+	color: var(--placeholder-color);
+	font-family: "Bebas Neue";
+	font-size: var(--font-size-m);
+	padding-left: var(--padding-s);
+}
+
+textarea::placeholder {
+	padding-top: 10px;
+}
+/* Media query para pantallas con un ancho máximo de 768px */
+@media screen and (max-width: 768px) {
+	#contactForm {
+		width: 90%;
+	}
+
+	#contact {
+		background-position: center;
+	}
+}

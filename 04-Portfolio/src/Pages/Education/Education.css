@@ -1,0 +1,82 @@
+/* Estilos para la sección de Educación */
+.education {
+	align-items: center;
+	background-image: url("/public/assets/fondoeducation.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	height: 87vh;
+	padding-top: var(--padding-xs);
+}
+/* Estilos para el título de la sección de Educación */
+.education-title {
+	margin-bottom: var(--margin-xs);
+}
+/* Estilos para el texto del título de Educación */
+.education > div > p {
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 2px var(--secondary-text-color);
+	filter: drop-shadow(
+		0px 0px 4px var(--secondary-text-color)
+	);
+	font-family: "Death Star";
+	font-size: var(--font-size-xl);
+}
+/* Estilos para el contenedor de estudios */
+.study-container {
+	display: flex;
+	flex-direction: column;
+	gap: 37px;
+	margin-top: var(--margin-xs);
+}
+/* Estilos para los artículos de estudios */
+.study-container > article {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+/* Estilos para los títulos de estudios */
+.study-container > article > h3 {
+	color: var(--primary-text-color);
+	font-family: "Bebas Neue";
+	font-size: 50px;
+	font-weight: var(--font-weight-s);
+}
+/* Estilos para los detalles de estudios */
+.study-container > article > p {
+	color: var(--primary-text-color);
+	font-family: "Bebas Neue";
+	font-size: var(--font-size-l);
+	font-weight: var(--font-weight-s);
+}
+
+
+/* Media queries para dispositivos móviles */
+@media screen and (min-width: 390px) and (max-width: 450px) {
+	.study-container {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 25px;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+
+	.study-container > article > h3 {
+		font-size: 27px !important;
+	}
+
+	.study-container > article > p {
+		font-size: 16px !important;
+	}
+}
+
+/* Media queries para tablets */
+@media screen and (min-width: 768px) and (max-width: 768px) {
+	.study-container {
+		margin: auto;
+	}
+}

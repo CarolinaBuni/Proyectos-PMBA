@@ -1,0 +1,43 @@
+/* Estilos CSS para el botón clickToOpen */
+.btnClickToOpen {
+	background-color: transparent;
+	border: none;
+	position: relative;
+	z-index: 6;
+}
+/* Estilos para la imagen dentro del botón */
+.btnClickToOpen > img {
+	cursor: pointer;
+}
+/* Estilos para el div contenedor del botón */
+#divBtn {
+	display: flex;
+	justify-content: center;
+}
+/* Media query para pantallas entre 390px y 450px */
+@media screen and (min-width: 390px) and (max-width: 450px) {
+	#divBtn > p {
+		font-size: 15px !important;
+		padding: var(--padding-m) !important;
+		text-align: center !important;
+		width: 85% !important;
+	}
+
+	#divBtn {
+		bottom: 16rem;
+		position: relative;
+	}
+
+	#divBtn > button > img {
+		position: relative !important;
+		top: 12rem;
+	}
+}
+/* Media query para pantallas con un ancho de 768px */
+@media screen and (min-width: 768px) and (max-width: 768px) {
+	#divBtn > p {
+		border: none !important;
+		position: inherit !important;
+		width: auto !important;
+	}
+}

@@ -1,96 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.cdnfonts.com/css/death-star');
+/* Importaciones de fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.cdnfonts.com/css/death-star");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Reset de estilos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
+	box-sizing: border-box;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+/* Variables CSS */
+:root {
+	--bg-color: #cf23c170;
+	--bg-dark-color: #0000004d;
+	--bg-form-color: #5169997a;
+	--blue-hover-color: #00ffff;
+	--pink-hover-color: #ff99cc;
+	--placeholder-color: #ffffff48;
+	--primary-text-color: #ffffff;
+	--secondary-text-color: #ceb7ff;
+	--text-shadow-color: #b377ff;
+
+	--margin-xs: 2rem;
+	--margin-s: 4rem;
+	--margin-ss: 8rem;
+	--margin-xm: 10px;
+	--margin-m: 12px;
+	--margin-l: 15px;
+
+	--padding-xs: 3rem;
+	--padding-s: 10px;
+	--padding-m: 15px;
+	--padding-l: 20px;
+
+	--font-size-s: 2rem;
+	--font-size-m: 20px;
+	--font-size-l: 30px;
+	--font-size-xl: 58px;
+
+	--font-weight-s: 400;
+	--font-weight-m: 600;
+
+	--stroke-s: 1px;
+	--stroke-m: 2px;
 }
 
-body {
-    background-image: url(./public/assets/home-background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+html {
+	scroll-behavior: smooth;
 }
 
-header {
-    /* border: 2px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: right;
+#home-container {
+	background-image: url(./public/assets/home-background.webp);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 98vh;
 }
 
-button {
-    border: none;
-    background-color: transparent;
-    color: #FFF;
-    font-size: 41px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    font-family: 'Bebas Neue', sans-serif;
-    padding: 30px;
-    transition: all 0.6s ease 0s;
-    cursor: pointer;
+@font-face {
+	font-family: "Death Star";
+	src: url("./Death\ Star.otf");
 }
 
-button:hover {
-    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-    box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.6s ease 0s;
+.divider {
+	border: 2px solid var(--secondary-text-color);
+	filter: drop-shadow(
+		0px 0px 4px var(--secondary-text-color)
+	);
+	height: 1rem;
+	stroke-width: var(--stroke-s);
+	stroke-width: var(--stroke-s);
+	stroke: var(--secondary-text-color);
+	stroke: var(--secondary-text-color);
+}
+/* Media Queries */
+@media screen and (min-width: 390px) and (max-width: 450px) {
+	.ul-nav-bar {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	#home-container,
+	.education,
+	.experience {
+		background-position: top;
+	}
+
+	.hero {
+		width: 100%;
+	}
+
+	.sectionHero > h1 {
+		font-size: var(--font-size-s);
+	}
+
+	.asideUl {
+		flex-direction: row;
+	}
+
+	.education-title > p {
+		font-size: var(--font-size-s) !important;
+	}
+
+	.experience-title > p {
+		font-size: var(--font-size-s) !important;
+	}
 }
 
-section {
-    /* border: 2px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 100px;
+@media only screen and (max-width: 1440px) and (min-width: 1440px) {
+	#divBtn > p {
+		position: inherit;
+		width: 77%;
+	}
+
+	.study-container {
+		display: flex;
+	}
+
+	div.study-container > article {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		padding: 15px;
+	}
+
+	#education > div.study-container > article > h3 {
+		font-size: 35px;
+	}
+
+	#education > div.study-container > article > p {
+		font-size: 1rem !important;
+	}
 }
 
-h1 {
-    color: #CEB7FF;
-    border: 2px rgb(206, 183, 255, 1);
-    text-shadow: 0px 0px 5px #B377FF;
-    font-family: 'Death Star', sans-serif;                                            
-    font-size: 58px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    cursor: pointer;
+@media screen and (min-width: 390px) and (max-width: 450px) {
+	#home-container {
+		background-image: url(/public//assets/mobileBg.webp);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.li-nav-bar {
+		margin: auto;
+	}
 }
 
-h1:hover {
-    box-shadow: 0 0 20px 10px #ff00ff;
-    transition: all 0.8s ease-in-out;
+@media screen and (min-width: 768px) and (max-width: 768px) {
+	.hero {
+		width: -webkit-fill-available;
+	}
 
-}
-
-aside {
-    margin-top: 150px;
-    display: flex;
-    margin-left: 87px;
-    /* border: 2px solid red; */
-    width: 20%;
-    /* height: 40vh; */
-}
-
-ul {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.link {
-    border-radius: 50px;
-    transition: all 0.8s ease-in-out;
-    border: none;
-}
-
-.link:hover {
-    box-shadow: 0 0 20px 10px #00ffff;
-    transition: all 0.8s ease-in-out;
+	#home-container,
+	.education,
+	.experience,
+	#projects,
+	#contact {
+		background-position: center;
+	}
 }

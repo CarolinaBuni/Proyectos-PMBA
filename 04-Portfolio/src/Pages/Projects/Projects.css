@@ -1,0 +1,96 @@
+/* Estilos para la sección de Proyectos */
+#projects {
+	align-items: center;
+	background-image: url("/public/assets/fondoProjects.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	height: 87vh;
+	padding-top: var(--padding-xs);
+}
+/* Estilos para la lista de proyectos */
+#projects > ul {
+	display: grid;
+	grid-template-columns: repeat(3, 0.3fr);
+	grid-template-rows: repeat(2, 0.4fr);
+	justify-content: center;
+	justify-items: center;
+	margin-top: var(--margin-s);
+	row-gap: 50px;
+	width: 100%;
+}
+
+#projects > ul > li {
+	text-align: center;
+}
+
+.projects > ul > li > img {
+	cursor: pointer;
+}
+/* Estilos para el contenido de los proyectos */
+.content {
+	color: var(--primary-text-color);
+	font-family: "Bebas Neue";
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.content > h2,
+p {
+	font-size: var(--font-size-l);
+	font-weight: lighter;
+}
+
+.content > a > img {
+	margin-left: var(--margin-m);
+	width: 40px;
+}
+/* Estilos para el texto del título de Proyectos */
+#projects > div > p {
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: var(--stroke-m)
+		var(--secondary-text-color);
+	filter: drop-shadow(
+		0px 0px 4px var(--secondary-text-color)
+	);
+	font-family: "Death Star";
+	font-size: var(--font-size-xl);
+}
+/* Media queries para dispositivos con ancho de pantalla máximo de 390px */
+@media screen and (max-width: 390px) {
+	#projects > ul {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	#experience {
+		height: auto;
+	}
+
+	#projects {
+		height: auto !important;
+	}
+
+	#contactForm {
+		width: auto !important;
+	}
+}
+/* Media queries para dispositivos con ancho de pantalla máximo de 1440px */
+@media screen and (max-width: 1440px) {
+	#projects {
+		height: auto;
+	}
+
+	#projects > ul {
+		margin-bottom: var(--margin-s);
+	}
+}
+/* Media queries para dispositivos con ancho de pantalla máximo de 768px */
+@media screen and (max-width: 768px) {
+	#projects > ul {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+}

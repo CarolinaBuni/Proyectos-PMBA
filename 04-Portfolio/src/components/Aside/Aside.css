@@ -1,0 +1,33 @@
+
+/* Estilos CSS del aside */
+
+/* Estilos generales del aside*/
+aside {
+	display: flex;
+	margin-left: 87px;
+}
+/* Estilos específicos del ul dentro del aside */
+.asideUl {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+/* Estilos de los enlaces dentro del ul */
+.link {
+	border-radius: 50px;
+	border: none;
+	transition: all 0.8s ease-in-out;
+}
+/* Estilos de los enlaces para el hover */
+.link:hover {
+	box-shadow: inset 0 0 20px 20px var(--blue-hover-color);
+	transition: all 0.8s ease-in-out;
+}
+
+/* Estilos específicos para pantallas con un ancho entre 390px y 450px */
+@media screen and (min-width: 390px) and (max-width: 450px) {
+	.aside {
+		position: relative;
+		top: 24rem;
+	}
+}
