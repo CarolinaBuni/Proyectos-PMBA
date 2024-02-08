@@ -17,17 +17,17 @@ export const aside$$ = () => {
 	asideUl.innerHTML = `
     <li>
         <a href="https://github.com/CarolinaBuni" target="_blank">
-            <img class="link" src="./public/assets/logoGithub.png" alt="Logo GitHub">
+            <img class="link" src="/assets/logoGithub.png" alt="Logo GitHub">
         </a>
     </li>
     <li>
         <a href="https://www.instagram.com/carou_pipoca/" target="_blank">
-            <img class="link"  src="./public/assets/logoInstagram.png" alt="Logo Instagram" target="_blank">
+            <img class="link"  src="./assets/logoInstagram.png" alt="Logo Instagram" target="_blank">
         </a>
     </li>
     <li>
         <a href="https://www.linkedin.com/in/carolina-buni-de-jes%C3%BAs-48b23822b/" target="_blank">
-            <img class="link"  src="./public/assets/logoLinkedin.png" alt="Logo LinkedIn">
+            <img class="link"  src="/assets/logoLinkedin.png" alt="Logo LinkedIn">
         </a>
     </li>
     `;

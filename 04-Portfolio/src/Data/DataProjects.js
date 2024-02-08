@@ -1,6 +1,6 @@
 export const PROJECTS = [
   {
-    image: "/public/assets/Ubisoft.webp",
+    image: "/assets/Ubisoft.webp",
     title: "Práctica Flex",
     tech: ["HTML5", "CSS3", "JavaScript"],
     github:
@@ -8,7 +8,7 @@ export const PROJECTS = [
     link: "https://fascinating-meerkat-c803a6.netlify.app/",
   },
   {
-    image: "/public/assets/Pinterest.webp",
+    image: "/assets/Pinterest.webp",
     title: "Async Web Design",
     tech: ["HTML5", "CSS3", "JavaScript"],
     github:
@@ -16,7 +16,7 @@ export const PROJECTS = [
     link: "https://proyectos-pmba.vercel.app/",
   },
   {
-    image: "/public/assets/Druni.webp",
+    image: "/assets/Druni.webp",
     title: "Página Web Responsive",
     tech: ["HTML5", "CSS3"],
     github:
@@ -24,7 +24,7 @@ export const PROJECTS = [
     link: "https://fancy-madeleine-a461ff.netlify.app",
   },
   {
-    image: "/public/assets/Hannun.webp",
+    image: "/assets/Hannun.webp",
     title: "Tienda Dinámica",
     tech: ["HTML5", "CSS3", "JavaScript"],
     github:
@@ -32,7 +32,7 @@ export const PROJECTS = [
     link: "https://hannunstore.netlify.app",
   },
   {
-    image: "/public/assets/Rockstar.webp",
+    image: "/assets/Rockstar.webp",
     title: "Web Design",
     tech: ["HTML5", "CSS3", "JavaScript"],
     github:
@@ -40,7 +40,7 @@ export const PROJECTS = [
     link: "https://scintillating-arithmetic-47c2c3.netlify.app/",
   },
   {
-    image: "/public/assets/Playstation.webp",
+    image: "/assets/Playstation.webp",
     title: "Maquetador",
     tech: ["HTML5", "CSS3"],
     github:

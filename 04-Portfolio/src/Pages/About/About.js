@@ -15,7 +15,7 @@ export const ponerProfile = () => {
   // Creo un elemento img para la imagen del hero
   const imgSectionProfile$$ = document.createElement("img");
   imgSectionProfile$$.classList.add("hero");
-  imgSectionProfile$$.src = "./public/assets/hero.webp";
+  imgSectionProfile$$.src = "/assets/hero.webp";
   imgSectionProfile$$.alt = "hero";
 
   // Agrego los elementos al section

@@ -8,7 +8,7 @@ export function buttonOpen() {
 	const buttonOpenImg = document.createElement("img");
     // Añado clases y atributos al botón y la imagen
 	buttonOpen.classList.add("btnClickToOpen");
-	buttonOpenImg.src = "/public/assets/ClickToOpen.svg";
+	buttonOpenImg.src = "/assets/ClickToOpen.svg";
 	buttonOpenImg.setAttribute("alt", "Click to open");
     // Añado la imagen al botón
 	buttonOpen.appendChild(buttonOpenImg);
