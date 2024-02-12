@@ -80,3 +80,20 @@
 		margin: auto;
 	}
 }
+
+@media screen and (min-width: 1440px) {
+	.education {
+		height: auto;
+		padding-bottom: 2rem;
+	}
+
+	#experience {
+		height: auto;
+		padding-bottom: 2rem;
+	}
+
+	#projects {
+		height: auto !important;
+		padding-bottom: 2rem;
+	}
+}

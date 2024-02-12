@@ -72,9 +72,6 @@ p {
 		height: auto !important;
 	}
 
-	#contactForm {
-		width: auto !important;
-	}
 }
 /* Media queries para dispositivos con ancho de pantalla máximo de 1440px */
 @media screen and (max-width: 1440px) {

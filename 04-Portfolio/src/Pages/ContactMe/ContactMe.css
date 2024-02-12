@@ -1,7 +1,7 @@
 /* Estilos para la sección "ContactMe" */
 #contact {
 	align-items: center;
-	background-image: url("/public//assets/ContactMe.webp");
+	background-image: url("/public/assets/fondoContactMe.webp");
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
@@ -23,7 +23,7 @@
 
 .form-group > input,
 textarea {
-	background-color: var(--bg-form-color);
+	background-color: #3348c6e0;
 	border: none;
 }
 
@@ -43,7 +43,7 @@ textarea {
 	margin-bottom: var(--margin-l);
 }
 
-.form-group label {
+.form-group > label {
 	color: var(--primary-text-color);
 	font-family: "Bebas Neue";
 	font-size: 38px;
@@ -82,3 +82,4 @@ textarea::placeholder {
 		background-position: center;
 	}
 }
+

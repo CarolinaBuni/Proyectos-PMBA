@@ -29,5 +29,7 @@ aside {
 	.aside {
 		position: relative;
 		top: 24rem;
+		margin-left: auto;
+		justify-content: center;
 	}
 }

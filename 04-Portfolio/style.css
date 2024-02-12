@@ -88,6 +88,7 @@ html {
 
 	.hero {
 		width: 100%;
+		padding: 2rem;
 	}
 
 	.sectionHero > h1 {
@@ -125,6 +126,10 @@ html {
 		padding: 15px;
 	}
 
+	.education {
+		height: auto !important;
+	}
+
 	#education > div.study-container > article > h3 {
 		font-size: 35px;
 	}
@@ -145,11 +150,14 @@ html {
 	.li-nav-bar {
 		margin: auto;
 	}
+
+	
 }
 
 @media screen and (min-width: 768px) and (max-width: 768px) {
 	.hero {
 		width: -webkit-fill-available;
+		padding: 0 2rem;
 	}
 
 	#home-container,
@@ -158,5 +166,78 @@ html {
 	#projects,
 	#contact {
 		background-position: center;
+	}
+}
+
+@media screen and (min-width: 450px) and (max-width: 1024px) {
+	#projects > ul {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		gap: 8rem;
+	}
+
+	#home-container, #education, #experience, #contact {
+		background-position: center;
+	}
+
+	#contactForm  {
+		width: 90%;
+	}
+
+	.hero {
+		width: -webkit-fill-available;
+		padding: 0 2rem;
+	}
+
+	.li-nav-bar > a {
+		font-size: 25px;
+		
+	}
+
+	#home-container {
+		height: auto;
+	}
+
+	aside {
+		margin-left: 25px;
+	}
+
+	#divBtn > p {
+		top: 3rem;
+		width: 100%;
+	}
+
+	.education, .experience {
+		height: auto;
+	}
+
+	#contact {
+		height: auto;
+		padding-bottom: 2rem;
+	}
+
+	.contact-content {
+		margin-top: 4rem;
+	}
+
+	.study-container > article > h3 {
+		font-size: xx-large;
+	}
+
+	#education {
+		padding-bottom: 3rem
+	}
+
+	.experience-title {
+		width: min-content;
+	}
+}
+
+@media screen and (min-width: 390px) and (max-width: 390px) {
+	.form-group label {
+		font-size: large;
+		margin-right: auto;
+		width: 60px;
 	}
 }

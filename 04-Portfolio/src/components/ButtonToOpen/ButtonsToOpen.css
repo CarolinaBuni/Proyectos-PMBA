@@ -41,3 +41,10 @@
 		width: auto !important;
 	}
 }
+
+@media screen and (min-width: 1440px) {
+	#divBtn > p {
+		top: auto !important;
+		width: 66% !important;
+	}
+}

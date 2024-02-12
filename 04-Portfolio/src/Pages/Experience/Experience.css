@@ -77,5 +77,6 @@
 
 	.experience-container {
 		gap: 50px;
+		padding: 0 3rem;
 	}
 }
