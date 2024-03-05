@@ -1,0 +1,142 @@
+:root {
+     --color-fondo-tablero: #f0f0f0;
+     --color-fondo-celda: #ffffff;
+     --color-borde: #cccccc;
+     --color-hover-celda: #eaeaea;
+     --color-borde-destacado: #00ff00;
+}
+
+
+.board {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: repeat(3, 1fr);
+     grid-column-gap: 0px;
+     grid-row-gap: 0px;
+     width: 450px;
+     max-width: 100%;
+     aspect-ratio: 1;
+
+     gap: 10px;
+     padding: 10px;
+     border: 2rem solid #2a3f5f;
+     background-color: var(--color-fondo-tablero);
+     border-radius: 20px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Aplicar bordes a todas las celdas */
+.board>div {
+     background-color: var(--color-fondo-celda);
+     border-radius: 15px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 2px solid var(--color-borde);
+     font-size: 2em;
+     font-weight: bold;
+     box-shadow: inset 0 4px 8px rgba(0,0,0,0.1);
+     transition: background-color 0.3s ease;
+}
+
+.board>div:not(:nth-child(3n)) {
+     border-right: 2px dashed var(--color-borde);
+}
+
+.board>div:not(:nth-last-child(-n+3)) {
+     border-bottom: 2px dashed var(--color-borde);
+}
+
+
+.board>div:hover {
+     background-color: var(--color-hover-celda);
+}
+
+
+.button.highlight {
+     border: 2px solid  var(--color-borde-destacado); /* Añade un borde verde al botón del jugador actual */
+ }
+
+/* Ocultar bordes en las celdas específicas */
+.div1,
+.div2,
+.div3 {
+     border-top: none;
+}
+
+.div1,
+.div4,
+.div7 {
+     border-left: none;
+}
+
+.div3,
+.div6,
+.div9 {
+     border-right: none;
+}
+
+.div7,
+.div8,
+.div9 {
+     border-bottom: none;
+}
+
+
+
+.div1 {
+     grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+     grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+     grid-area: 1 / 3 / 2 / 4;
+}
+
+.div4 {
+     grid-area: 2 / 1 / 3 / 2;
+}
+
+.div5 {
+     grid-area: 2 / 2 / 3 / 3;
+}
+
+.div6 {
+     grid-area: 2 / 3 / 3 / 4;
+}
+
+.div7 {
+     grid-area: 3 / 1 / 4 / 2;
+}
+
+.div8 {
+     grid-area: 3 / 2 / 4 / 3;
+}
+
+.div9 {
+     grid-area: 3 / 3 / 4 / 4;
+}
+
+.content {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     gap: 2rem;
+}
+
+.div-buttons {
+     width: 450px;
+     max-width: 100%;
+     display: flex;
+     justify-content: space-evenly;
+}
+
+.div-buttons>button {
+     padding: 10px 20px;
+     width: 50%;
+     cursor: pointer;
+}

@@ -1,0 +1,32 @@
+:root {
+     --color-fondo-botones-header: #a176ca;
+     --padding-general: 10px 20px;
+     --font-size-button: 25px;
+     --font-size-title: 50px;
+}
+
+
+header {
+     display: flex;
+     height: 5svh;
+     padding: 5%;
+     justify-content: space-around;
+     align-items: center;
+}
+
+header button {
+     padding: var(--padding-general);
+     border-radius: 8px;
+     font-size: var(--font-size-button);
+     background-color: var(--color-fondo-botones-header);
+     border: 3px solid black;
+     font-weight: 900;
+}
+
+@media (max-width: 500px){
+     header button {
+          margin-top: 20px;
+          font-size: 20px;
+          padding: 5px 10px;
+     }
+}

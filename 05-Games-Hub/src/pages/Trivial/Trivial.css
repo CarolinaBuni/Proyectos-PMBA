@@ -1,0 +1,77 @@
+:root {
+     --color-fondo: #563440;
+     --color-fondo-tarjeta: #9A879D;
+     --color-borde-tarjeta: #7A3B69;
+     --color-texto-pregunta: #CFCFCD;
+     --color-hover-respuesta: #D7DEDC;
+     --color-fondo-highlight: #a076ca;
+
+     --margin-general: 30px;
+     
+}
+
+body {
+     background-color: var(--color-fondo);
+}
+
+.card {
+     width: 400px;
+     height: 400px;
+     background-color: var(--color-fondo-tarjeta);
+     border-radius: 10px;
+     border: 3px solid var(--color-borde-tarjeta);
+     margin: var(--margin-general);
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.card h2 {
+     text-align: center;
+     color: var(--color-texto-pregunta);
+}
+
+.card h3 {
+     cursor: pointer;
+     transition: all 0.8s;
+     
+}
+
+.card h3:hover {
+     color: var(--color-hover-respuesta);
+     transition: all 0.8s ease-in-out;
+     letter-spacing: 1.5px;
+}
+
+.divPreguntas {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+
+.resultado {
+     background-color: black;
+     color: white;
+     z-index: 9;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+}
+
+.highlight {
+     background-color: var(--color-fondo-highlight);
+}
+
+
+@media (max-width: 390px){
+     .content {
+          margin-top: 5rem;
+          padding: 0 0.5rem;
+     }
+
+     .card {
+          width: auto;
+     }
+}
