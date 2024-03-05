@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+}
+
+:root {
+    --primary: #ffffff;
+    --secondary: #202124;
+    --terciary: #e4002c;
+    font-family: 'Rubik', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px -4px var(--secondary);
+    padding: 30px;
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    border: 2px solid var(--terciary);
+		background-color: var(--primary);
+}
+
+form > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form > div input, form > div select {
+    border: 2px solid var(--terciary);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+form > button {
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: var(--terciary);
+    width: 50%;
+    align-self: center;
+    color: var(--primary);
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all, 0.5s;
+}
+
+form > button:hover {
+    box-shadow: 0px 10px 25px -4px var(--secondary);
+}

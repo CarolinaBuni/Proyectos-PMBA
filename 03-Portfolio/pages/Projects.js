@@ -1,7 +1,7 @@
 import "./Projects.css";
 import { projects } from "../data/projects";
-import { Divider } from "../components/Divider/Divider";
-import { ProjectCard } from "../components/ProjectCard/ProjectCard"
+import { Divider } from "../src/components/Divider/Divider";
+import { ProjectCard } from "../src/components/ProjectCard/ProjectCard"
 import { cleanPage } from "../utils/cleanPage";
 
 export const Projects = () => {
