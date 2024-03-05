@@ -55,8 +55,8 @@ export const initTicTacToe = () => {
         [ '', '', '' ]
     ];
 
-    const xImage = '/assets/Prs/xImage.svg';
-    const oImage = '/assets/Prs/oImage.svg';
+    const xImage = '/assets/Tic-Tac-Toe/xImage.svg';
+    const oImage = '/assets/Tic-Tac-Toe/oImage.svg';
 
     let gameActive = false;
 

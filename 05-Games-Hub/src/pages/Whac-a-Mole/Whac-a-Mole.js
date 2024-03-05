@@ -20,7 +20,7 @@ export const initMole = () => {
      const audio = document.createElement( "audio" );
 
 
-     audio.src = "/public/assets/Whack-a-Mole/SMASH sound effect for editing_gjyKS5j88_Q (mp3cut.net) (1).mp3";
+     audio.src = "/assets/Whack-a-Mole/SMASH sound effect for editing_gjyKS5j88_Q (mp3cut.net) (1).mp3";
      jugar.textContent = "Jugar";
      pausar.textContent = "Pausar";
      contadorTopos.textContent = `Puntos ${ COUNT }`;
@@ -68,7 +68,7 @@ const createTopo = () => {
 
 
 
-     imgTopo.src = '/public/assets/Whack-a-Mole/topo.png';
+     imgTopo.src = '/assets/Whack-a-Mole/topo.png';
      divContent.append( imgTopo );
 
      comprobar();
