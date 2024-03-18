@@ -3,248 +3,171 @@ import "./Whac-a-Mole.css";
 
 let COUNT = 0;
 let intervalo;
+let timeouts = []; 
 let pausado = true;
-let juegoFinalizado = false;
+let juegoActivo = false;
+let jugar, pausar; 
+
 
 export const initMole = () => {
-     juegoFinalizado = false;
-     clearInterval( intervalo );
-     limpiarResultado();
-     document.body.classList.add( 'restringir-desbordamiento' );
-     const divContent = document.querySelector( '.content' );
-     divContent.innerHTML = "";
+    limpiarResultado();
+    COUNT = 0; // Reiniciar la puntuación al iniciar el juego
+    limpiarResultado();
 
-     const contadorTopos = document.createElement( 'h2' );
-     const jugar = document.createElement( "button" );
-     const pausar = document.createElement( "button" );
-     const audio = document.createElement( "audio" );
+    document.body.classList.add( 'restringir-desbordamiento' );
+    const divContent = document.querySelector( '.content' );
+    divContent.innerHTML = "";
+    juegoActivo = true;
 
+    const contadorTopos = document.createElement( 'h2' );
+    jugar = document.createElement( "button" );
+    pausar = document.createElement( "button" );
+    const audio = document.createElement( "audio" );
 
-     audio.src = "/assets/Whack-a-Mole/SMASH sound effect for editing_gjyKS5j88_Q (mp3cut.net) (1).mp3";
-     jugar.textContent = "Jugar";
-     pausar.textContent = "Pausar";
-     contadorTopos.textContent = `Puntos ${ COUNT }`;
-     jugar.className = "boton-topo";
-     pausar.className = "boton-topo";
-     contadorTopos.className = "contador";
+    audio.src = "/public/assets/Whack-a-Mole/SMASH sound effect for editing_gjyKS5j88_Q (mp3cut.net) (1).mp3";
+    jugar.textContent = "Jugar";
+    pausar.textContent = "Pausar";
+    contadorTopos.textContent = `Puntos ${ COUNT }`;
+    jugar.className = "boton-topo";
+    pausar.className = "boton-topo";
+    contadorTopos.className = "contador";
 
+    jugar.addEventListener( "click", () => {
+        pausado = false;
+        toggleButton( jugar, pausar );
+        iniciarJuego();
+    } );
+    pausar.addEventListener( "click", () => {
+        pausado = true;
+        toggleButton( jugar, pausar );
+        clearInterval( intervalo );
+    } );
 
+    toggleButton( jugar, pausar );
 
-     jugar.addEventListener( "click", () => {
-          pausado = !pausado;
-          toggleButton( jugar, pausar );
-          iniciarJuego();
-     } );
-     pausar.addEventListener( "click", () => {
-          pausado = !pausado;
-          toggleButton( jugar, pausar );
-          clearInterval( intervalo );
-     } );
-
-     toggleButton( jugar, pausar );
-
-     divContent.append( audio );
-     divContent.append( jugar );
-     divContent.append( pausar );
-     divContent.appendChild( contadorTopos );
-
-};
-
-const createTopo = () => {
-     if ( juegoFinalizado ) return;
-     const divContent = document.querySelector( '.content' );
-
-     let randomLeft = Math.random() * ( window.innerWidth - 100 );
-     let randomeTop = Math.random() * ( window.innerHeight - 200 );
-
-
-     const imgTopo = document.createElement( 'img' );
-     imgTopo.className = "topo";
-     imgTopo.style.top = `${ randomeTop + 150 }px`;
-     imgTopo.style.left = `${ randomLeft }px`;
-     imgTopo.classList.add( "aplastar" );
-
-     imgTopo.addEventListener( "click", ( e ) => aplastarTopo( e ) );
-
-
-
-     imgTopo.src = '/assets/Whack-a-Mole/topo.png';
-     divContent.append( imgTopo );
-
-     comprobar();
-};
-
-const aplastarTopo = ( e ) => {
-     const audio = document.querySelector( "audio" );
-     audio.play();
-     audio.volume = 0.20;
-     e.target.classList.add( "topoAplastado" );
-     COUNT++;
-     repintarTexto( COUNT );
-     e.target.classList.remove( "aplastar" );
-};
-
-const repintarTexto = ( cont ) => {
-     const texto = document.querySelector( '.contador' );
-     texto.textContent = `Puntos ${ cont }`;
-};
-
-const comprobar = () => {
-     if ( juegoFinalizado ) return;
-     const allTopos = document.querySelectorAll( '.topo.aplastar' );
-
-     if ( allTopos.length > 100 ) {
-          mostrarPopUpPerdida();
-          finalizarJuego();
-          clearInterval( intervalo );
-     }
+    divContent.append( audio );
+    divContent.append( jugar );
+    divContent.append( pausar );
+    divContent.appendChild( contadorTopos );
 };
 
 const iniciarJuego = () => {
-     intervalo = setInterval( () => {
-          createTopo();
-     }, 1000 );
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 900 );
-          }
-     }, 5000 );
+    juegoActivo = true; 
+    intervalo = setInterval( createTopo, 1000 );
+    // Restablece los timeouts para el aumento de velocidad
+    establecerAumentoVelocidad();
+};
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 800 );
-          }
-     }, 10000 );
+const establecerAumentoVelocidad = () => {
+    const velocidades = [ 900, 800, 700, 600, 500, 400, 300, 200, 100 ];
+    velocidades.forEach( ( velocidad, index ) => {
+        let timeout = setTimeout( () => {
+            if ( !pausado ) {
+                clearInterval( intervalo );
+                intervalo = setInterval( createTopo, velocidad );
+            }
+        }, 5000 * ( index + 1 ) );
+        timeouts.push( timeout ); // Guarda el timeout para limpiarlo después
+    } );
+};
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
 
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 700 );
-          }
-     }, 15000 );
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
+const createTopo = () => {
+    if ( pausado || !juegoActivo ) return;
 
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 600 );
-          }
-     }, 20000 );
+    const divContent = document.querySelector( '.content' );
+    let randomLeft = Math.random() * ( window.innerWidth - 100 );
+    let randomeTop = Math.random() * ( window.innerHeight - 200 );
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
+    const imgTopo = document.createElement( 'img' );
+    imgTopo.className = "topo";
+    imgTopo.style.top = `${ randomeTop + 150 }px`;
+    imgTopo.style.left = `${ randomLeft }px`;
+    imgTopo.classList.add( "aplastar" );
 
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 500 );
-          }
-     }, 25000 );
+    imgTopo.addEventListener( "click", aplastarTopo );
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
+    imgTopo.src = '/public/assets/Whack-a-Mole/topo.png';
+    divContent.append( imgTopo );
 
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 500 );
-          }
-     }, 25000 );
+    comprobar();
+};
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
+const aplastarTopo = ( e ) => {
+    if ( !pausado && !e.target.classList.contains( "topoAplastado" ) && juegoActivo ) {
+        const audio = document.querySelector( "audio" );
+        audio.play();
+        audio.volume = 0.20;
+        e.target.classList.add( "topoAplastado" );
+        COUNT++;
+        repintarTexto( COUNT );
+        setTimeout( () => e.target.remove(), 500 );
+    }
+};
 
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 400 );
-          }
-     }, 30000 );
+const repintarTexto = ( cont ) => {
+    const texto = document.querySelector( '.contador' );
+    if ( texto ) { // Verifica que el elemento exista antes de intentar acceder a su propiedad
+        texto.textContent = `Puntos ${ cont }`;
+    }
+};
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
+const comprobar = () => {
+    const allTopos = document.querySelectorAll( '.topo.aplastar' );
 
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 300 );
-          }
-     }, 35000 );
+    if ( allTopos.length > 100 ) {
+        mostrarPopUpPerdida();
+    }
+};
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
+const mostrarPopUpPerdida = () => {
+    pausado = true; 
+    toggleButton( jugar, pausar ); // Actualiza los botones para reflejar el estado pausado
+    finalizarJuego(); // Detiene la generación de topos y limpia el juego
 
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 200 );
-          }
-     }, 40000 );
+    const divResultadoWhacAMole = document.createElement( 'div' );
+    divResultadoWhacAMole.className = 'resultado-whacamole';
+    divResultadoWhacAMole.style = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;`;
+    divResultadoWhacAMole.innerHTML = `<h2>Los topos te han ganado esta vez. ¡Inténtalo de nuevo!</h2>`;
 
-     setTimeout( () => {
-          clearInterval( intervalo );
-          if ( !pausado ) {
+    document.body.appendChild( divResultadoWhacAMole );
 
-               intervalo = setInterval( () => {
-                    createTopo();
-               }, 100 );
-          }
-     }, 60000 );
+    setTimeout( () => {
+        divResultadoWhacAMole.remove();
+    }, 5000 );
 };
 
 const toggleButton = ( jugar, pausar ) => {
+    if ( pausado ) {
+        jugar.classList.remove( "oculto" ); 
+        pausar.classList.add( "oculto" ); 
+    } else {
+        pausar.classList.remove( "oculto" ); 
+        jugar.classList.add( "oculto" ); 
+    }
+};
 
-     if ( pausado ) {
-          jugar.classList.add( "show" );
-          pausar.classList.remove( "show" );
-     } else {
-          pausar.classList.add( "show" );
-          jugar.classList.remove( "show" );
-     };
+const limpiarJuego = () => {
+    clearInterval( intervalo ); 
+    timeouts.forEach( clearTimeout ); 
+    timeouts = []; 
 };
 
 export const finalizarJuego = () => {
-     juegoFinalizado = true;
-     const divContent = document.querySelector( '.restringir-desbordamiento' );
-     if ( divContent ) { // Verifica si divContent no es null
-          divContent.classList.remove( 'restringir-desbordamiento' ); // Quitar la clase al finalizar el juego
-     }
-
+    limpiarJuego();
+    juegoActivo = false;
+    COUNT = 0;
+    repintarTexto( COUNT );
+    const topos = document.querySelectorAll( '.topo' );
+    topos.forEach( topo => topo.remove() );
 };
-
-export function mostrarPopUpPerdida() {
-     const divResultadoWhacAMole = document.createElement( 'div' );
-     divResultadoWhacAMole.className = 'resultado-whacamole';
-
-     divResultadoWhacAMole.style = `
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: black;
-          color: white;
-          padding: 20px;
-          border-radius: 10px;
-          z-index: 1000;`;
-     divResultadoWhacAMole.innerHTML = `<h2>Los topos te han ganado esta vez. ¡Inténtalo de nuevo!</h2>`;
-     document.body.appendChild( divResultadoWhacAMole );
-}
-
-export function detenerWhacAMole() {
-     clearInterval( intervalo ); // Detiene la generación de topos
-
-     document.querySelectorAll( '.resultado-whacamole' ).forEach( popUp => {
-          popUp.remove();
-     } );
-}

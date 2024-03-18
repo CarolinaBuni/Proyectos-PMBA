@@ -3,11 +3,11 @@
      --color-fondo-tarjeta: #9A879D;
      --color-borde-tarjeta: #7A3B69;
      --color-texto-pregunta: #CFCFCD;
-     --color-hover-respuesta: #D7DEDC;
+     --color-hover-respuesta: #59e7bf;
      --color-fondo-highlight: #a076ca;
 
      --margin-general: 30px;
-     
+
 }
 
 body {
@@ -36,11 +36,10 @@ body {
 .card h3 {
      cursor: pointer;
      transition: all 0.8s;
-     
+
 }
 
 .card h3:hover {
-     color: var(--color-hover-respuesta);
      transition: all 0.8s ease-in-out;
      letter-spacing: 1.5px;
 }
@@ -60,12 +59,42 @@ body {
      left: 50%;
 }
 
-.highlight {
-     background-color: var(--color-fondo-highlight);
+.divPreguntas .card h3.disabled {
+     pointer-events: none;
 }
 
 
-@media (max-width: 390px){
+.respuesta {
+     cursor: pointer;
+     padding: 5px 10px;
+     border-radius: 8px;
+     transition: background-color 0.3s ease;
+}
+
+.seleccionada {
+     background-color: #f8f8f5;
+     padding: 5px;
+     /* Color neutro para las respuestas seleccionadas */
+}
+
+.correcta {
+     background-color: #6ee56ea3;
+     /* Color verde para las respuestas correctas */
+}
+
+.incorrecta {
+     background-color: #d65c5cde;
+     /* Color rojo para las respuestas incorrectas */
+}
+
+/* Estilo para desactivar el cursor en respuestas ya seleccionadas */
+.respuesta.seleccionada {
+     cursor: not-allowed;
+}
+
+
+
+@media (max-width: 390px) {
      .content {
           margin-top: 5rem;
           padding: 0 0.5rem;

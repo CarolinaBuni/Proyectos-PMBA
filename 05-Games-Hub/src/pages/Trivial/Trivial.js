@@ -1,4 +1,4 @@
-import { detenerWhacAMole, finalizarJuego } from "../Whac-a-Mole/Whac-a-Mole";
+import { finalizarJuego } from "../Whac-a-Mole/Whac-a-Mole";
 import "./Trivial.css";
 
 const preguntas = [
@@ -90,16 +90,20 @@ const preguntas = [
 ];
 
 
-
-import "./Trivial.css";
+let juegoFinalizado = false; // variable para controlar el estado del juego
+let respuestasSeleccionadas = {};
 
 export const initTrivial = () => {
-     finalizarJuego();
-     detenerWhacAMole();
-     // Restablecer puntos a 0 cada vez que se inicia el Trivial
-     let puntos = 0;
+     juegoFinalizado = false; // Restablecer el estado del juego al iniciar
+     respuestasSeleccionadas = {};
 
-     // Eliminar el divResultado si ya existe (paso 1 para limpieza entre juegos)
+
+
+     const scroll = document.querySelector( '.restringir-desbordamiento' );
+     if ( scroll ) { // Verificar si el elemento existe antes de intentar acceder a su classList
+          scroll.classList.remove( 'restringir-desbordamiento' );
+     }
+     finalizarJuego();
      limpiarResultado();
 
      const divContent = document.querySelector( '.content' );
@@ -123,47 +127,78 @@ export const initTrivial = () => {
                divPreguntas.append( card$$ );
 
                respuesta$$.addEventListener( 'click', () => {
-                    if ( respuesta === card.correcta ) {
-                         puntos++;
-                         respuesta$$.style.backgroundColor = "#6ee56ea3";
-                    } else {
-                         respuesta$$.style.backgroundColor = "#d65c5cde";
+                    if ( !juegoFinalizado && respuestasSeleccionadas[ i ] === undefined ) {
+                         // Marca la respuesta seleccionada y desactiva las demás
+                         card$$.querySelectorAll( 'h3' ).forEach( el => {
+                              if ( el !== respuesta$$ ) {
+                                   el.classList.add( 'disabled' ); // Desactiva las no seleccionadas
+                              }
+                         } );
+
+                         respuestasSeleccionadas[ i ] = { respuesta: respuesta, elemento: respuesta$$ };
+                         respuesta$$.classList.add( 'seleccionada' );
                     }
-                    respuesta$$.style.padding = "5px 10px";
-                    respuesta$$.style.borderRadius = "8px";
 
-                    // Desactivar todas las respuestas de esta pregunta
-                    card$$.querySelectorAll( 'h3' ).forEach( el => el.removeEventListener( 'click', this ) );
-
-                    if ( i === preguntas.length - 1 ) {
-                         setTimeout( () => mostrarResultado( puntos ), 500 ); // Retardo para permitir ver la última respuesta
+                    if ( !juegoFinalizado && Object.keys( respuestasSeleccionadas ).length === preguntas.length ) {
+                         juegoFinalizado = true;
+                         mostrarResultados( respuestasSeleccionadas );
                     }
                } );
+
           } );
      } );
 };
 
-// Función modificada para aceptar puntos como argumento
+function mostrarResultados( respuestasSeleccionadas ) {
+     let puntos = 0;
+     Object.entries( respuestasSeleccionadas ).forEach( ( [ indice, { respuesta, elemento } ] ) => {
+          const pregunta = preguntas[ indice ];
+          if ( respuesta === pregunta.correcta ) {
+               elemento.classList.add( 'correcta' );
+               puntos++;
+          } else {
+               elemento.classList.add( 'incorrecta' );
+          }
+     } );
+
+     mostrarResultado( puntos );
+}
+
 function mostrarResultado( puntos ) {
      const divResultado = document.createElement( 'div' );
      divResultado.className = 'resultado';
      divResultado.style = `
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         background-color: black;
-         color: white;
-         padding: 20px;
-         border-radius: 10px;
-         z-index: 1000;`;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: black;
+          color: white;
+          padding: 20px;
+          border-radius: 10px;
+          z-index: 1000;`;
 
-     divResultado.innerHTML = puntos > 5 ? `<h2>¡Enhorabuena! Has obtenido ${ puntos } aciertos.</h2>` : `<h2>¡Inténtalo de nuevo! Obtuviste ${ puntos } aciertos.</h2>`;
+     divResultado.innerHTML = `<h2>Has obtenido ${ puntos } ${ puntos === 1 ? 'punto' : 'puntos' }.</h2>`;
 
      document.body.appendChild( divResultado );
+
+     setTimeout( () => {
+          document.body.removeChild( divResultado );
+          reiniciarJuego(); // Llama a la función de reinicio del juego
+     }, 5000 );
+};
+
+function reiniciarJuego() {
+     juegoFinalizado = true; // Asegura que el juego se marca como finalizado antes de reiniciar
+     const respuestasElems = document.querySelectorAll( '.divPreguntas .card h3' );
+     respuestasElems.forEach( elem => {
+          elem.classList.remove( 'seleccionada', 'correcta', 'incorrecta', 'disabled' );
+     } );
+     initTrivial(); // Reinicia el juego
 }
 
-// Función para limpiar el resultado que se puede llamar al inicio de cada juego
+
+
 export function limpiarResultado() {
      const divResultadoExistente = document.querySelector( '.resultado' );
      if ( divResultadoExistente ) {

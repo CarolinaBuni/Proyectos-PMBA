@@ -1,12 +1,13 @@
 import { limpiarResultado } from "../Trivial/Trivial";
-import { detenerWhacAMole } from "../Whac-a-Mole/Whac-a-Mole";
+import { finalizarJuego } from "../Whac-a-Mole/Whac-a-Mole";
+
 
 import "./TicTacToe.css";
 
 
 
 export const initTicTacToe = () => {
-    detenerWhacAMole();
+    finalizarJuego();
     limpiarResultado();
     const divContent = document.querySelector( '.content' );
     divContent.innerHTML = "";
@@ -144,15 +145,15 @@ export const initTicTacToe = () => {
         divResultado.className = 'resultado-tictactoe';
 
         divResultado.style = `
-              position: fixed;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background-color: black;
-              color: white;
-              padding: 20px;
-              border-radius: 10px;
-              z-index: 1000;`;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;`;
 
         if ( winner ) {
             divResultado.innerHTML = `<h2>¡Jugador ${ winner } gana!</h2>`;
