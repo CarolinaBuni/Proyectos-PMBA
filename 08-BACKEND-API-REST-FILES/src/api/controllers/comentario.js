@@ -7,17 +7,14 @@ const getComments = async ( req, res, next ) => {
      try {
           const allComments = await Comment.find().populate( {
                path: 'event',
-               populate: [
-                    {
+               populate: {
+                    path: 'comentarios',
+                    populate: {
                          path: 'user',
                          model: 'usuarios'
-                    },
-                    {
-                         path: "comentarios",
-                         model: "comments",
                     }
-               ]
-          } );
+               }
+          } ).populate( 'user' );
           return res.status( 200 ).json( allComments );
      } catch ( error ) {
           return res.status( 400 ).json( error );
@@ -65,9 +62,9 @@ const putComments = async ( req, res, next ) => {
 const deleteComments = async ( req, res, next ) => {
      try {
           const { id } = req.params;
-          
+
           const commentDeleted = await Comment.findByIdAndDelete( id, { new: true } );
-          return res.status( 200 ).json(commentDeleted );
+          return res.status( 200 ).json( commentDeleted );
      } catch ( error ) {
           return res.status( 400 ).json( "Esta acción solo la puede realizar un administrador o el propietario del comentario" );
      }

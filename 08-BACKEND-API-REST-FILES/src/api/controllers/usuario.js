@@ -6,11 +6,20 @@ const bcrypt = require( "bcrypt" );
 const getUsuarios = async ( req, res, next ) => {
      try {
           const usuarios = await Usuario.find().populate( {
-               path: 'eventos', // Primero, poblamos los eventos del usuario
-               populate: {
-                    path: 'comentarios', // Luego, dentro de cada evento, poblamos los comentarios
-                    model: 'comments' // Especifica el modelo de los comentarios
-               }
+               path: 'eventos',
+               populate: [
+                    {
+                         path: 'comentarios',
+                         populate: {
+                              path: 'user',
+                              model: 'usuarios'
+                         }
+                    },
+                    {
+                         path: 'user',
+                         model: 'usuarios'
+                    }
+               ]
           } );
           return res.status( 200 ).json( usuarios );
      } catch ( error ) {
